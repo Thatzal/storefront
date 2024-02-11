@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.drawaura.socialapps.app-mergeReleaseResources-36:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/drawaurathatzal/.gradle/caches/transforms-3/92a07c4e44dab88525c155b3d6a6514d/transformed/core-1.10.1/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/Users/drawaurathatzal/.gradle/caches/transforms-3/67b30444b35cec3b8ee62c77dec409fa/transformed/appcompat-1.3.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}

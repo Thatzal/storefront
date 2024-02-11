@@ -1,0 +1,13 @@
+io.flutter.plugins.camera.camera_android-jetified-window-java-1.0.0-beta04-0 /Users/drawaurathatzal/.gradle/caches/transforms-3/7f5c0a88e605726915ea36caf9197191/transformed/jetified-window-java-1.0.0-beta04/res
+io.flutter.plugins.camera.camera_android-jetified-annotation-experimental-1.1.0-1 /Users/drawaurathatzal/.gradle/caches/transforms-3/b4a81ab737be1f118c6b7c6f67e915fb/transformed/jetified-annotation-experimental-1.1.0/res
+io.flutter.plugins.camera.camera_android-core-1.6.0-2 /Users/drawaurathatzal/.gradle/caches/transforms-3/bd143bd142702dc39c3f27acadaacb07/transformed/core-1.6.0/res
+io.flutter.plugins.camera.camera_android-jetified-window-1.0.0-beta04-3 /Users/drawaurathatzal/.gradle/caches/transforms-3/dc088083d5a1860f98d6434729706507/transformed/jetified-window-1.0.0-beta04/res
+io.flutter.plugins.camera.camera_android-main-4 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/camera_android-0.10.8+13/android/src/main/res
+io.flutter.plugins.camera.camera_android-release-5 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/camera_android-0.10.8+13/android/src/release/res
+io.flutter.plugins.camera.camera_android-pngs-6 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/camera_android/generated/res/pngs/release
+io.flutter.plugins.camera.camera_android-resValues-7 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/camera_android/generated/res/resValues/release
+io.flutter.plugins.camera.camera_android-rs-8 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/camera_android/generated/res/rs/release
+io.flutter.plugins.camera.camera_android-mergeReleaseResources-9 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/camera_android/intermediates/incremental/release/mergeReleaseResources/merged.dir
+io.flutter.plugins.camera.camera_android-mergeReleaseResources-10 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/camera_android/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+io.flutter.plugins.camera.camera_android-merged_res-11 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/camera_android/intermediates/merged_res/release
+io.flutter.plugins.camera.camera_android-packaged_res-12 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/release

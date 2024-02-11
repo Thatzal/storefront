@@ -1,0 +1,14 @@
+io.flutter.plugins.videoplayer.video_player_android-lifecycle-runtime-2.3.1-0 /Users/drawaurathatzal/.gradle/caches/transforms-3/4463a6c5f94bfb50eb7a930b4d5e0d65/transformed/lifecycle-runtime-2.3.1/res
+io.flutter.plugins.videoplayer.video_player_android-core-1.7.0-1 /Users/drawaurathatzal/.gradle/caches/transforms-3/45f80636f3187519ea7bc73c3e1b58fc/transformed/core-1.7.0/res
+io.flutter.plugins.videoplayer.video_player_android-jetified-exoplayer-core-2.18.7-2 /Users/drawaurathatzal/.gradle/caches/transforms-3/5ac228cde492cbc84768ed9a72407cca/transformed/jetified-exoplayer-core-2.18.7/res
+io.flutter.plugins.videoplayer.video_player_android-jetified-window-java-1.0.0-beta04-3 /Users/drawaurathatzal/.gradle/caches/transforms-3/7f5c0a88e605726915ea36caf9197191/transformed/jetified-window-java-1.0.0-beta04/res
+io.flutter.plugins.videoplayer.video_player_android-jetified-annotation-experimental-1.1.0-4 /Users/drawaurathatzal/.gradle/caches/transforms-3/b4a81ab737be1f118c6b7c6f67e915fb/transformed/jetified-annotation-experimental-1.1.0/res
+io.flutter.plugins.videoplayer.video_player_android-jetified-window-1.0.0-beta04-5 /Users/drawaurathatzal/.gradle/caches/transforms-3/dc088083d5a1860f98d6434729706507/transformed/jetified-window-1.0.0-beta04/res
+io.flutter.plugins.videoplayer.video_player_android-main-6 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/video_player_android-2.4.10/android/src/main/res
+io.flutter.plugins.videoplayer.video_player_android-release-7 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/video_player_android-2.4.10/android/src/release/res
+io.flutter.plugins.videoplayer.video_player_android-pngs-8 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/video_player_android/generated/res/pngs/release
+io.flutter.plugins.videoplayer.video_player_android-resValues-9 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/video_player_android/generated/res/resValues/release
+io.flutter.plugins.videoplayer.video_player_android-rs-10 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/video_player_android/generated/res/rs/release
+io.flutter.plugins.videoplayer.video_player_android-mergeReleaseResources-11 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/video_player_android/intermediates/incremental/release/mergeReleaseResources/merged.dir
+io.flutter.plugins.videoplayer.video_player_android-mergeReleaseResources-12 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/video_player_android/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+io.flutter.plugins.videoplayer.video_player_android-merged_res-13 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/video_player_android/intermediates/merged_res/release

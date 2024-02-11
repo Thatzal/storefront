@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">230682747481</string>
+    <string name="google_api_key" translatable="false">AIzaSyC96fcOJ0gsrNSzz7Vz_U6BFFiOI-c53Tc</string>
+    <string name="google_app_id" translatable="false">1:230682747481:android:954aaefb0efdfe4fe2c748</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC96fcOJ0gsrNSzz7Vz_U6BFFiOI-c53Tc</string>
+    <string name="google_storage_bucket" translatable="false">thatzaldrawaura.appspot.com</string>
+    <string name="project_id" translatable="false">thatzaldrawaura</string>
+</resources>

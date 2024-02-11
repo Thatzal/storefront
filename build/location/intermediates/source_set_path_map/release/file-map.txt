@@ -1,0 +1,16 @@
+com.lyokone.location-jetified-window-java-1.0.0-beta04-0 /Users/drawaurathatzal/.gradle/caches/transforms-3/7f5c0a88e605726915ea36caf9197191/transformed/jetified-window-java-1.0.0-beta04/res
+com.lyokone.location-jetified-annotation-experimental-1.1.0-1 /Users/drawaurathatzal/.gradle/caches/transforms-3/b4a81ab737be1f118c6b7c6f67e915fb/transformed/jetified-annotation-experimental-1.1.0/res
+com.lyokone.location-core-1.6.0-2 /Users/drawaurathatzal/.gradle/caches/transforms-3/bd143bd142702dc39c3f27acadaacb07/transformed/core-1.6.0/res
+com.lyokone.location-coordinatorlayout-1.0.0-3 /Users/drawaurathatzal/.gradle/caches/transforms-3/d0f79a6709ee1f9a15fec52436a7fadc/transformed/coordinatorlayout-1.0.0/res
+com.lyokone.location-media-1.0.0-4 /Users/drawaurathatzal/.gradle/caches/transforms-3/d1f70e0fadca3a2bdb37caf8bdb22ded/transformed/media-1.0.0/res
+com.lyokone.location-jetified-window-1.0.0-beta04-5 /Users/drawaurathatzal/.gradle/caches/transforms-3/dc088083d5a1860f98d6434729706507/transformed/jetified-window-1.0.0-beta04/res
+com.lyokone.location-jetified-play-services-base-16.0.1-6 /Users/drawaurathatzal/.gradle/caches/transforms-3/f646b7dd1973d92b2746a8d224605d02/transformed/jetified-play-services-base-16.0.1/res
+com.lyokone.location-jetified-play-services-basement-16.0.1-7 /Users/drawaurathatzal/.gradle/caches/transforms-3/f98dfbb8d92fcf2d681e1cd100e0b122/transformed/jetified-play-services-basement-16.0.1/res
+com.lyokone.location-main-8 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/location-4.4.0/android/src/main/res
+com.lyokone.location-release-9 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/location-4.4.0/android/src/release/res
+com.lyokone.location-pngs-10 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/location/generated/res/pngs/release
+com.lyokone.location-resValues-11 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/location/generated/res/resValues/release
+com.lyokone.location-rs-12 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/location/generated/res/rs/release
+com.lyokone.location-mergeReleaseResources-13 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/location/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.lyokone.location-mergeReleaseResources-14 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/location/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.lyokone.location-merged_res-15 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/location/intermediates/merged_res/release

@@ -1,0 +1,4092 @@
+
+class OfferDataModel {
+  OfferDataModel({
+      String? status, 
+      String? message, 
+      List<OfferDataModelResult>? result,}){
+    _status = status;
+    _message = message;
+    _result = result;
+}
+
+  OfferDataModel.fromJson(dynamic json) {
+    _status = json['status'];
+    _message = json['message'];
+    if (json['result'] != null) {
+      _result = [];
+      json['result'].forEach((v) {
+        _result?.add(OfferDataModelResult.fromJson(v));
+      });
+    }
+  }
+  String? _status;
+  String? _message;
+  List<OfferDataModelResult>? _result;
+OfferDataModel copyWith({  String? status,
+  String? message,
+  List<OfferDataModelResult>? result,
+}) => OfferDataModel(  status: status ?? _status,
+  message: message ?? _message,
+  result: result ?? _result,
+);
+  String? get status => _status;
+  String? get message => _message;
+  List<OfferDataModelResult>? get result => _result;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['status'] = _status;
+    map['message'] = _message;
+    if (_result != null) {
+      map['result'] = _result?.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+
+class OfferDataModelResult {
+  OfferDataModelResult({
+      MainOfferDetails? offerData,
+      List<OfferCountersData>? offerCounters,}){
+    _offerData = offerData;
+    _offerCounters = offerCounters;
+}
+
+  OfferDataModelResult.fromJson(dynamic json) {
+    _offerData = json['OfferData'] != null ? MainOfferDetails.fromJson(json['OfferData']) : null;
+    if (json['OfferCounters'] != null) {
+      _offerCounters = [];
+      json['OfferCounters'].forEach((v) {
+        _offerCounters?.add(OfferCountersData.fromJson(v));
+      });
+    }
+  }
+  MainOfferDetails? _offerData;
+  List<OfferCountersData>? _offerCounters;
+OfferDataModelResult copyWith({  MainOfferDetails? offerData,
+  List<OfferCountersData>? offerCounters,
+}) => OfferDataModelResult(  offerData: offerData ?? _offerData,
+  offerCounters: offerCounters ?? _offerCounters,
+);
+  MainOfferDetails? get offerData => _offerData;
+  List<OfferCountersData>? get offerCounters => _offerCounters;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    if (_offerData != null) {
+      map['OfferData'] = _offerData?.toJson();
+    }
+    if (_offerCounters != null) {
+      map['OfferCounters'] = _offerCounters?.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+
+class OfferCountersData {
+  OfferCountersData({
+      List<Counter>? counter,}){
+    _counter = counter;
+}
+
+  OfferCountersData.fromJson(dynamic json) {
+    if (json['counter'] != null) {
+      _counter = [];
+      json['counter'].forEach((v) {
+        _counter?.add(Counter.fromJson(v));
+      });
+    }
+  }
+  List<Counter>? _counter;
+OfferCountersData copyWith({  List<Counter>? counter,
+}) => OfferCountersData(  counter: counter ?? _counter,
+);
+  List<Counter>? get counter => _counter;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    if (_counter != null) {
+      map['counter'] = _counter?.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+class Counter {
+  Counter({
+      num? id, 
+      OfferConditions? offerConditions, 
+      List<OfferItems>? offerItems, 
+      dynamic parent, 
+      Offer? offer, 
+      String? tabactivity, 
+      String? counteringstatus, 
+      String? createdAt, 
+      String? modified, 
+      num? confirmSteps, 
+      String? slug, 
+      FromCounter? fromCounter, 
+      ToCounter? toCounter, 
+      List<OfferBid>? offerBid,}){
+    _id = id;
+    _offerConditions = offerConditions;
+    _offerItems = offerItems;
+    _parent = parent;
+    _offer = offer;
+    _tabactivity = tabactivity;
+    _counteringstatus = counteringstatus;
+    _createdAt = createdAt;
+    _modified = modified;
+    _confirmSteps = confirmSteps;
+    _slug = slug;
+    _fromCounter = fromCounter;
+    _toCounter = toCounter;
+    _offerBid = offerBid;
+}
+
+  Counter.fromJson(dynamic json) {
+    _id = json['id'];
+    _offerConditions = json['offer_conditions'] != null ? OfferConditions.fromJson(json['offer_conditions']) : null;
+    if (json['offer_items'] != null) {
+      _offerItems = [];
+      json['offer_items'].forEach((v) {
+        _offerItems?.add(OfferItems.fromJson(v));
+      });
+    }
+    _parent = json['parent'];
+    _offer = json['offer'] != null ? Offer.fromJson(json['offer']) : null;
+    _tabactivity = json['tabactivity'];
+    _counteringstatus = json['counteringstatus'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    _confirmSteps = json['confirm_steps'];
+    _slug = json['slug'];
+    _fromCounter = json['from_counter'] != null ? FromCounter.fromJson(json['from_counter']) : null;
+    _toCounter = json['to_counter'] != null ? ToCounter.fromJson(json['to_counter']) : null;
+    if (json['offer_bid'] != null) {
+      _offerBid = [];
+      json['offer_bid'].forEach((v) {
+        _offerBid?.add(OfferBid.fromJson(v));
+      });
+    }
+  }
+  num? _id;
+  OfferConditions? _offerConditions;
+  List<OfferItems>? _offerItems;
+  dynamic _parent;
+  Offer? _offer;
+  String? _tabactivity;
+  String? _counteringstatus;
+  String? _createdAt;
+  String? _modified;
+  num? _confirmSteps;
+  String? _slug;
+  FromCounter? _fromCounter;
+  ToCounter? _toCounter;
+  List<OfferBid>? _offerBid;
+Counter copyWith({  num? id,
+  OfferConditions? offerConditions,
+  List<OfferItems>? offerItems,
+  dynamic parent,
+  Offer? offer,
+  String? tabactivity,
+  String? counteringstatus,
+  String? createdAt,
+  String? modified,
+  num? confirmSteps,
+  String? slug,
+  FromCounter? fromCounter,
+  ToCounter? toCounter,
+  List<OfferBid>? offerBid,
+}) => Counter(  id: id ?? _id,
+  offerConditions: offerConditions ?? _offerConditions,
+  offerItems: offerItems ?? _offerItems,
+  parent: parent ?? _parent,
+  offer: offer ?? _offer,
+  tabactivity: tabactivity ?? _tabactivity,
+  counteringstatus: counteringstatus ?? _counteringstatus,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  confirmSteps: confirmSteps ?? _confirmSteps,
+  slug: slug ?? _slug,
+  fromCounter: fromCounter ?? _fromCounter,
+  toCounter: toCounter ?? _toCounter,
+  offerBid: offerBid ?? _offerBid,
+);
+  num? get id => _id;
+  OfferConditions? get offerConditions => _offerConditions;
+  List<OfferItems>? get offerItems => _offerItems;
+  dynamic get parent => _parent;
+  Offer? get offer => _offer;
+  String? get tabactivity => _tabactivity;
+  String? get counteringstatus => _counteringstatus;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  num? get confirmSteps => _confirmSteps;
+  String? get slug => _slug;
+  FromCounter? get fromCounter => _fromCounter;
+  ToCounter? get toCounter => _toCounter;
+  List<OfferBid>? get offerBid => _offerBid;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    if (_offerConditions != null) {
+      map['offer_conditions'] = _offerConditions?.toJson();
+    }
+    if (_offerItems != null) {
+      map['offer_items'] = _offerItems?.map((v) => v.toJson()).toList();
+    }
+    map['parent'] = _parent;
+    if (_offer != null) {
+      map['offer'] = _offer?.toJson();
+    }
+    map['tabactivity'] = _tabactivity;
+    map['counteringstatus'] = _counteringstatus;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    map['confirm_steps'] = _confirmSteps;
+    map['slug'] = _slug;
+    if (_fromCounter != null) {
+      map['from_counter'] = _fromCounter?.toJson();
+    }
+    if (_toCounter != null) {
+      map['to_counter'] = _toCounter?.toJson();
+    }
+    if (_offerBid != null) {
+      map['offer_bid'] = _offerBid?.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+/// id : 74
+
+class OfferBid {
+  OfferBid({
+      num? id, 
+      String? comment, 
+      String? createdAt, 
+      String? modified, 
+      FromCounter? fromCounter, 
+      dynamic toCounter,}){
+    _id = id;
+    _comment = comment;
+    _createdAt = createdAt;
+    _modified = modified;
+    _fromCounter = fromCounter;
+    _toCounter = toCounter;
+}
+
+  OfferBid.fromJson(dynamic json) {
+    _id = json['id'];
+    _comment = json['comment'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    _fromCounter = json['from_counter'] != null ? FromCounter.fromJson(json['from_counter']) : null;
+    _toCounter = json['to_counter'];
+  }
+  num? _id;
+  String? _comment;
+  String? _createdAt;
+  String? _modified;
+  FromCounter? _fromCounter;
+  dynamic _toCounter;
+OfferBid copyWith({  num? id,
+  String? comment,
+  String? createdAt,
+  String? modified,
+  FromCounter? fromCounter,
+  dynamic toCounter,
+}) => OfferBid(  id: id ?? _id,
+  comment: comment ?? _comment,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  fromCounter: fromCounter ?? _fromCounter,
+  toCounter: toCounter ?? _toCounter,
+);
+  num? get id => _id;
+  String? get comment => _comment;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  FromCounter? get fromCounter => _fromCounter;
+  dynamic get toCounter => _toCounter;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['comment'] = _comment;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    if (_fromCounter != null) {
+      map['from_counter'] = _fromCounter?.toJson();
+    }
+    map['to_counter'] = _toCounter;
+    return map;
+  }
+
+}
+
+
+class FromCounter {
+  FromCounter({
+      num? id, 
+      String? displayname, 
+      String? phonenumber, 
+      String? username, 
+      String? email, 
+      String? profilePicture, 
+      String? pagePicture, 
+      String? desc, 
+      String? placeORperson, 
+      String? businessORpublic,
+      dynamic classification,
+      bool? movable, 
+      String? addressORarea, 
+      String? operatingaddress, 
+      String? maritalstatus, 
+      dynamic passportnumber, 
+      dynamic dateofissue, 
+      String? nationality, 
+      String? dateofbirth, 
+      String? gender, 
+      String? religion, 
+      dynamic subreligion, 
+      String? caste, 
+      String? subsect, 
+      String? searchPagePositionPreferences, 
+      dynamic offeringAreaPreference, 
+      dynamic offerCategoryPreference, 
+      dynamic offerSegmentPreference, 
+      dynamic offerSubSegmentPreference, 
+      String? currentLocation, 
+      bool? wantToBuy, 
+      bool? wantToSell, 
+      bool? optDelivery, 
+      bool? closeConfirmedOffers, 
+      bool? okForCurrentLocationOffers, 
+      String? offerMatchPercentage, 
+      num? meanComputedRating, 
+      num? numberofcomputations, 
+      num? meanUserRating, 
+      num? numberofusersRating, 
+      String? blocked, 
+      dynamic blockedtime, 
+      String? subscriptionStatus, 
+      dynamic paymentDone, 
+      dynamic paymentDate, 
+      String? deviceToken, 
+      String? createdAt, 
+      String? modified, 
+      List<num>? followers, 
+      List<num>? following,}){
+    _id = id;
+    _displayname = displayname;
+    _phonenumber = phonenumber;
+    _username = username;
+    _email = email;
+    _profilePicture = profilePicture;
+    _pagePicture = pagePicture;
+    _desc = desc;
+    _placeORperson = placeORperson;
+    _businessORpublic = businessORpublic;
+    _classification = classification;
+    _movable = movable;
+    _addressORarea = addressORarea;
+    _operatingaddress = operatingaddress;
+    _maritalstatus = maritalstatus;
+    _passportnumber = passportnumber;
+    _dateofissue = dateofissue;
+    _nationality = nationality;
+    _dateofbirth = dateofbirth;
+    _gender = gender;
+    _religion = religion;
+    _subreligion = subreligion;
+    _caste = caste;
+    _subsect = subsect;
+    _searchPagePositionPreferences = searchPagePositionPreferences;
+    _offeringAreaPreference = offeringAreaPreference;
+    _offerCategoryPreference = offerCategoryPreference;
+    _offerSegmentPreference = offerSegmentPreference;
+    _offerSubSegmentPreference = offerSubSegmentPreference;
+    _currentLocation = currentLocation;
+    _wantToBuy = wantToBuy;
+    _wantToSell = wantToSell;
+    _optDelivery = optDelivery;
+    _closeConfirmedOffers = closeConfirmedOffers;
+    _okForCurrentLocationOffers = okForCurrentLocationOffers;
+    _offerMatchPercentage = offerMatchPercentage;
+    _meanComputedRating = meanComputedRating;
+    _numberofcomputations = numberofcomputations;
+    _meanUserRating = meanUserRating;
+    _numberofusersRating = numberofusersRating;
+    _blocked = blocked;
+    _blockedtime = blockedtime;
+    _subscriptionStatus = subscriptionStatus;
+    _paymentDone = paymentDone;
+    _paymentDate = paymentDate;
+    _deviceToken = deviceToken;
+    _createdAt = createdAt;
+    _modified = modified;
+    _followers = followers;
+    _following = following;
+}
+
+  FromCounter.fromJson(dynamic json) {
+    _id = json['id'];
+    _displayname = json['displayname'];
+    _phonenumber = json['phonenumber'];
+    _username = json['username'];
+    _email = json['email'];
+    _profilePicture = json['profile_picture'];
+    _pagePicture = json['page_picture'];
+    _desc = json['desc'];
+    _placeORperson = json['placeORperson'];
+    _businessORpublic = json['businessORpublic'];
+    _classification = json['classification'];
+    _movable = json['movable'];
+    _addressORarea = json['addressORarea'];
+    _operatingaddress = json['operatingaddress'];
+    _maritalstatus = json['maritalstatus'];
+    _passportnumber = json['passportnumber'];
+    _dateofissue = json['dateofissue'];
+    _nationality = json['nationality'];
+    _dateofbirth = json['dateofbirth'];
+    _gender = json['gender'];
+    _religion = json['religion'];
+    _subreligion = json['subreligion'];
+    _caste = json['caste'];
+    _subsect = json['subsect'];
+    _searchPagePositionPreferences = json['search_page_position_preferences'];
+    _offeringAreaPreference = json['Offering_area_preference'];
+    _offerCategoryPreference = json['Offer_Category_preference'];
+    _offerSegmentPreference = json['Offer_Segment_preference'];
+    _offerSubSegmentPreference = json['Offer_Sub_Segment_preference'];
+    _currentLocation = json['Current_Location'];
+    _wantToBuy = json['Want_to_Buy'];
+    _wantToSell = json['Want_to_sell'];
+    _optDelivery = json['Opt_Delivery'];
+    _closeConfirmedOffers = json['Close_Confirmed_Offers'];
+    _okForCurrentLocationOffers = json['Ok_for_Current_location_Offers'];
+    _offerMatchPercentage = json['Offer_match_percentage'];
+    _meanComputedRating = json['mean_computed_rating'];
+    _numberofcomputations = json['numberofcomputations'];
+    _meanUserRating = json['mean_user_rating'];
+    _numberofusersRating = json['numberofusers_rating'];
+    _blocked = json['blocked'];
+    _blockedtime = json['blockedtime'];
+    _subscriptionStatus = json['subscription_status'];
+    _paymentDone = json['payment_done'];
+    _paymentDate = json['payment_date'];
+    _deviceToken = json['deviceToken'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    _followers = json['followers'] != null ? json['followers'].cast<num>() : [];
+    _following = json['following'] != null ? json['following'].cast<num>() : [];
+  }
+  num? _id;
+  String? _displayname;
+  String? _phonenumber;
+  String? _username;
+  String? _email;
+  String? _profilePicture;
+  String? _pagePicture;
+  String? _desc;
+  String? _placeORperson;
+  String? _businessORpublic;
+  dynamic _classification;
+  bool? _movable;
+  String? _addressORarea;
+  String? _operatingaddress;
+  String? _maritalstatus;
+  dynamic _passportnumber;
+  dynamic _dateofissue;
+  String? _nationality;
+  String? _dateofbirth;
+  String? _gender;
+  String? _religion;
+  dynamic _subreligion;
+  String? _caste;
+  String? _subsect;
+  String? _searchPagePositionPreferences;
+  dynamic _offeringAreaPreference;
+  dynamic _offerCategoryPreference;
+  dynamic _offerSegmentPreference;
+  dynamic _offerSubSegmentPreference;
+  String? _currentLocation;
+  bool? _wantToBuy;
+  bool? _wantToSell;
+  bool? _optDelivery;
+  bool? _closeConfirmedOffers;
+  bool? _okForCurrentLocationOffers;
+  String? _offerMatchPercentage;
+  num? _meanComputedRating;
+  num? _numberofcomputations;
+  num? _meanUserRating;
+  num? _numberofusersRating;
+  String? _blocked;
+  dynamic _blockedtime;
+  String? _subscriptionStatus;
+  dynamic _paymentDone;
+  dynamic _paymentDate;
+  String? _deviceToken;
+  String? _createdAt;
+  String? _modified;
+  List<num>? _followers;
+  List<num>? _following;
+FromCounter copyWith({  num? id,
+  String? displayname,
+  String? phonenumber,
+  String? username,
+  String? email,
+  String? profilePicture,
+  String? pagePicture,
+  String? desc,
+  String? placeORperson,
+  String? businessORpublic,
+  dynamic classification,
+  bool? movable,
+  String? addressORarea,
+  String? operatingaddress,
+  String? maritalstatus,
+  dynamic passportnumber,
+  dynamic dateofissue,
+  String? nationality,
+  String? dateofbirth,
+  String? gender,
+  String? religion,
+  dynamic subreligion,
+  String? caste,
+  String? subsect,
+  String? searchPagePositionPreferences,
+  dynamic offeringAreaPreference,
+  dynamic offerCategoryPreference,
+  dynamic offerSegmentPreference,
+  dynamic offerSubSegmentPreference,
+  String? currentLocation,
+  bool? wantToBuy,
+  bool? wantToSell,
+  bool? optDelivery,
+  bool? closeConfirmedOffers,
+  bool? okForCurrentLocationOffers,
+  String? offerMatchPercentage,
+  num? meanComputedRating,
+  num? numberofcomputations,
+  num? meanUserRating,
+  num? numberofusersRating,
+  String? blocked,
+  dynamic blockedtime,
+  String? subscriptionStatus,
+  dynamic paymentDone,
+  dynamic paymentDate,
+  String? deviceToken,
+  String? createdAt,
+  String? modified,
+  List<num>? followers,
+  List<num>? following,
+}) => FromCounter(  id: id ?? _id,
+  displayname: displayname ?? _displayname,
+  phonenumber: phonenumber ?? _phonenumber,
+  username: username ?? _username,
+  email: email ?? _email,
+  profilePicture: profilePicture ?? _profilePicture,
+  pagePicture: pagePicture ?? _pagePicture,
+  desc: desc ?? _desc,
+  placeORperson: placeORperson ?? _placeORperson,
+  businessORpublic: businessORpublic ?? _businessORpublic,
+  classification: classification ?? _classification,
+  movable: movable ?? _movable,
+  addressORarea: addressORarea ?? _addressORarea,
+  operatingaddress: operatingaddress ?? _operatingaddress,
+  maritalstatus: maritalstatus ?? _maritalstatus,
+  passportnumber: passportnumber ?? _passportnumber,
+  dateofissue: dateofissue ?? _dateofissue,
+  nationality: nationality ?? _nationality,
+  dateofbirth: dateofbirth ?? _dateofbirth,
+  gender: gender ?? _gender,
+  religion: religion ?? _religion,
+  subreligion: subreligion ?? _subreligion,
+  caste: caste ?? _caste,
+  subsect: subsect ?? _subsect,
+  searchPagePositionPreferences: searchPagePositionPreferences ?? _searchPagePositionPreferences,
+  offeringAreaPreference: offeringAreaPreference ?? _offeringAreaPreference,
+  offerCategoryPreference: offerCategoryPreference ?? _offerCategoryPreference,
+  offerSegmentPreference: offerSegmentPreference ?? _offerSegmentPreference,
+  offerSubSegmentPreference: offerSubSegmentPreference ?? _offerSubSegmentPreference,
+  currentLocation: currentLocation ?? _currentLocation,
+  wantToBuy: wantToBuy ?? _wantToBuy,
+  wantToSell: wantToSell ?? _wantToSell,
+  optDelivery: optDelivery ?? _optDelivery,
+  closeConfirmedOffers: closeConfirmedOffers ?? _closeConfirmedOffers,
+  okForCurrentLocationOffers: okForCurrentLocationOffers ?? _okForCurrentLocationOffers,
+  offerMatchPercentage: offerMatchPercentage ?? _offerMatchPercentage,
+  meanComputedRating: meanComputedRating ?? _meanComputedRating,
+  numberofcomputations: numberofcomputations ?? _numberofcomputations,
+  meanUserRating: meanUserRating ?? _meanUserRating,
+  numberofusersRating: numberofusersRating ?? _numberofusersRating,
+  blocked: blocked ?? _blocked,
+  blockedtime: blockedtime ?? _blockedtime,
+  subscriptionStatus: subscriptionStatus ?? _subscriptionStatus,
+  paymentDone: paymentDone ?? _paymentDone,
+  paymentDate: paymentDate ?? _paymentDate,
+  deviceToken: deviceToken ?? _deviceToken,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  followers: followers ?? _followers,
+  following: following ?? _following,
+);
+  num? get id => _id;
+  String? get displayname => _displayname;
+  String? get phonenumber => _phonenumber;
+  String? get username => _username;
+  String? get email => _email;
+  String? get profilePicture => _profilePicture;
+  String? get pagePicture => _pagePicture;
+  String? get desc => _desc;
+  String? get placeORperson => _placeORperson;
+  String? get businessORpublic => _businessORpublic;
+  dynamic get classification => _classification;
+  bool? get movable => _movable;
+  String? get addressORarea => _addressORarea;
+  String? get operatingaddress => _operatingaddress;
+  String? get maritalstatus => _maritalstatus;
+  dynamic get passportnumber => _passportnumber;
+  dynamic get dateofissue => _dateofissue;
+  String? get nationality => _nationality;
+  String? get dateofbirth => _dateofbirth;
+  String? get gender => _gender;
+  String? get religion => _religion;
+  dynamic get subreligion => _subreligion;
+  String? get caste => _caste;
+  String? get subsect => _subsect;
+  String? get searchPagePositionPreferences => _searchPagePositionPreferences;
+  dynamic get offeringAreaPreference => _offeringAreaPreference;
+  dynamic get offerCategoryPreference => _offerCategoryPreference;
+  dynamic get offerSegmentPreference => _offerSegmentPreference;
+  dynamic get offerSubSegmentPreference => _offerSubSegmentPreference;
+  String? get currentLocation => _currentLocation;
+  bool? get wantToBuy => _wantToBuy;
+  bool? get wantToSell => _wantToSell;
+  bool? get optDelivery => _optDelivery;
+  bool? get closeConfirmedOffers => _closeConfirmedOffers;
+  bool? get okForCurrentLocationOffers => _okForCurrentLocationOffers;
+  String? get offerMatchPercentage => _offerMatchPercentage;
+  num? get meanComputedRating => _meanComputedRating;
+  num? get numberofcomputations => _numberofcomputations;
+  num? get meanUserRating => _meanUserRating;
+  num? get numberofusersRating => _numberofusersRating;
+  String? get blocked => _blocked;
+  dynamic get blockedtime => _blockedtime;
+  String? get subscriptionStatus => _subscriptionStatus;
+  dynamic get paymentDone => _paymentDone;
+  dynamic get paymentDate => _paymentDate;
+  String? get deviceToken => _deviceToken;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  List<num>? get followers => _followers;
+  List<num>? get following => _following;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['displayname'] = _displayname;
+    map['phonenumber'] = _phonenumber;
+    map['username'] = _username;
+    map['email'] = _email;
+    map['profile_picture'] = _profilePicture;
+    map['page_picture'] = _pagePicture;
+    map['desc'] = _desc;
+    map['placeORperson'] = _placeORperson;
+    map['businessORpublic'] = _businessORpublic;
+    map['classification'] = _classification;
+    map['movable'] = _movable;
+    map['addressORarea'] = _addressORarea;
+    map['operatingaddress'] = _operatingaddress;
+    map['maritalstatus'] = _maritalstatus;
+    map['passportnumber'] = _passportnumber;
+    map['dateofissue'] = _dateofissue;
+    map['nationality'] = _nationality;
+    map['dateofbirth'] = _dateofbirth;
+    map['gender'] = _gender;
+    map['religion'] = _religion;
+    map['subreligion'] = _subreligion;
+    map['caste'] = _caste;
+    map['subsect'] = _subsect;
+    map['search_page_position_preferences'] = _searchPagePositionPreferences;
+    map['Offering_area_preference'] = _offeringAreaPreference;
+    map['Offer_Category_preference'] = _offerCategoryPreference;
+    map['Offer_Segment_preference'] = _offerSegmentPreference;
+    map['Offer_Sub_Segment_preference'] = _offerSubSegmentPreference;
+    map['Current_Location'] = _currentLocation;
+    map['Want_to_Buy'] = _wantToBuy;
+    map['Want_to_sell'] = _wantToSell;
+    map['Opt_Delivery'] = _optDelivery;
+    map['Close_Confirmed_Offers'] = _closeConfirmedOffers;
+    map['Ok_for_Current_location_Offers'] = _okForCurrentLocationOffers;
+    map['Offer_match_percentage'] = _offerMatchPercentage;
+    map['mean_computed_rating'] = _meanComputedRating;
+    map['numberofcomputations'] = _numberofcomputations;
+    map['mean_user_rating'] = _meanUserRating;
+    map['numberofusers_rating'] = _numberofusersRating;
+    map['blocked'] = _blocked;
+    map['blockedtime'] = _blockedtime;
+    map['subscription_status'] = _subscriptionStatus;
+    map['payment_done'] = _paymentDone;
+    map['payment_date'] = _paymentDate;
+    map['deviceToken'] = _deviceToken;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    map['followers'] = _followers;
+    map['following'] = _following;
+    return map;
+  }
+
+}
+
+
+class ToCounter {
+  ToCounter({
+      num? id, 
+      String? displayname, 
+      String? phonenumber, 
+      String? username, 
+      String? email, 
+      String? profilePicture, 
+      String? pagePicture, 
+      String? desc, 
+      String? placeORperson, 
+      String? businessORpublic,
+      dynamic classification,
+      bool? movable, 
+      String? addressORarea, 
+      String? operatingaddress, 
+      String? maritalstatus, 
+      dynamic passportnumber, 
+      dynamic dateofissue, 
+      String? nationality, 
+      String? dateofbirth, 
+      String? gender, 
+      String? religion, 
+      dynamic subreligion, 
+      String? caste, 
+      String? subsect, 
+      String? searchPagePositionPreferences, 
+      dynamic offeringAreaPreference, 
+      dynamic offerCategoryPreference, 
+      dynamic offerSegmentPreference, 
+      dynamic offerSubSegmentPreference, 
+      String? currentLocation, 
+      bool? wantToBuy, 
+      bool? wantToSell, 
+      bool? optDelivery, 
+      bool? closeConfirmedOffers, 
+      bool? okForCurrentLocationOffers, 
+      String? offerMatchPercentage, 
+      num? meanComputedRating, 
+      num? numberofcomputations, 
+      num? meanUserRating, 
+      num? numberofusersRating, 
+      String? blocked, 
+      dynamic blockedtime, 
+      String? subscriptionStatus, 
+      dynamic paymentDone, 
+      dynamic paymentDate, 
+      String? deviceToken, 
+      String? createdAt, 
+      String? modified, 
+      List<Followers>? followers, 
+      List<Following>? following,}){
+    _id = id;
+    _displayname = displayname;
+    _phonenumber = phonenumber;
+    _username = username;
+    _email = email;
+    _profilePicture = profilePicture;
+    _pagePicture = pagePicture;
+    _desc = desc;
+    _placeORperson = placeORperson;
+    _businessORpublic = businessORpublic;
+    _classification = classification;
+    _movable = movable;
+    _addressORarea = addressORarea;
+    _operatingaddress = operatingaddress;
+    _maritalstatus = maritalstatus;
+    _passportnumber = passportnumber;
+    _dateofissue = dateofissue;
+    _nationality = nationality;
+    _dateofbirth = dateofbirth;
+    _gender = gender;
+    _religion = religion;
+    _subreligion = subreligion;
+    _caste = caste;
+    _subsect = subsect;
+    _searchPagePositionPreferences = searchPagePositionPreferences;
+    _offeringAreaPreference = offeringAreaPreference;
+    _offerCategoryPreference = offerCategoryPreference;
+    _offerSegmentPreference = offerSegmentPreference;
+    _offerSubSegmentPreference = offerSubSegmentPreference;
+    _currentLocation = currentLocation;
+    _wantToBuy = wantToBuy;
+    _wantToSell = wantToSell;
+    _optDelivery = optDelivery;
+    _closeConfirmedOffers = closeConfirmedOffers;
+    _okForCurrentLocationOffers = okForCurrentLocationOffers;
+    _offerMatchPercentage = offerMatchPercentage;
+    _meanComputedRating = meanComputedRating;
+    _numberofcomputations = numberofcomputations;
+    _meanUserRating = meanUserRating;
+    _numberofusersRating = numberofusersRating;
+    _blocked = blocked;
+    _blockedtime = blockedtime;
+    _subscriptionStatus = subscriptionStatus;
+    _paymentDone = paymentDone;
+    _paymentDate = paymentDate;
+    _deviceToken = deviceToken;
+    _createdAt = createdAt;
+    _modified = modified;
+    _followers = followers;
+    _following = following;
+}
+
+  ToCounter.fromJson(dynamic json) {
+    _id = json['id'];
+    _displayname = json['displayname'];
+    _phonenumber = json['phonenumber'];
+    _username = json['username'];
+    _email = json['email'];
+    _profilePicture = json['profile_picture'];
+    _pagePicture = json['page_picture'];
+    _desc = json['desc'];
+    _placeORperson = json['placeORperson'];
+    _businessORpublic = json['businessORpublic'];
+    _classification = json['classification'];
+    _movable = json['movable'];
+    _addressORarea = json['addressORarea'];
+    _operatingaddress = json['operatingaddress'];
+    _maritalstatus = json['maritalstatus'];
+    _passportnumber = json['passportnumber'];
+    _dateofissue = json['dateofissue'];
+    _nationality = json['nationality'];
+    _dateofbirth = json['dateofbirth'];
+    _gender = json['gender'];
+    _religion = json['religion'];
+    _subreligion = json['subreligion'];
+    _caste = json['caste'];
+    _subsect = json['subsect'];
+    _searchPagePositionPreferences = json['search_page_position_preferences'];
+    _offeringAreaPreference = json['Offering_area_preference'];
+    _offerCategoryPreference = json['Offer_Category_preference'];
+    _offerSegmentPreference = json['Offer_Segment_preference'];
+    _offerSubSegmentPreference = json['Offer_Sub_Segment_preference'];
+    _currentLocation = json['Current_Location'];
+    _wantToBuy = json['Want_to_Buy'];
+    _wantToSell = json['Want_to_sell'];
+    _optDelivery = json['Opt_Delivery'];
+    _closeConfirmedOffers = json['Close_Confirmed_Offers'];
+    _okForCurrentLocationOffers = json['Ok_for_Current_location_Offers'];
+    _offerMatchPercentage = json['Offer_match_percentage'];
+    _meanComputedRating = json['mean_computed_rating'];
+    _numberofcomputations = json['numberofcomputations'];
+    _meanUserRating = json['mean_user_rating'];
+    _numberofusersRating = json['numberofusers_rating'];
+    _blocked = json['blocked'];
+    _blockedtime = json['blockedtime'];
+    _subscriptionStatus = json['subscription_status'];
+    _paymentDone = json['payment_done'];
+    _paymentDate = json['payment_date'];
+    _deviceToken = json['deviceToken'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    if (json['followers'] != null) {
+      _followers = [];
+      json['followers'].forEach((v) {
+        _followers?.add(Followers.fromJson(v));
+      });
+    }
+    if (json['following'] != null) {
+      _following = [];
+      json['following'].forEach((v) {
+        _following?.add(Following.fromJson(v));
+      });
+    }
+  }
+  num? _id;
+  String? _displayname;
+  String? _phonenumber;
+  String? _username;
+  String? _email;
+  String? _profilePicture;
+  String? _pagePicture;
+  String? _desc;
+  String? _placeORperson;
+  String? _businessORpublic;
+  dynamic _classification;
+  bool? _movable;
+  String? _addressORarea;
+  String? _operatingaddress;
+  String? _maritalstatus;
+  dynamic _passportnumber;
+  dynamic _dateofissue;
+  String? _nationality;
+  String? _dateofbirth;
+  String? _gender;
+  String? _religion;
+  dynamic _subreligion;
+  String? _caste;
+  String? _subsect;
+  String? _searchPagePositionPreferences;
+  dynamic _offeringAreaPreference;
+  dynamic _offerCategoryPreference;
+  dynamic _offerSegmentPreference;
+  dynamic _offerSubSegmentPreference;
+  String? _currentLocation;
+  bool? _wantToBuy;
+  bool? _wantToSell;
+  bool? _optDelivery;
+  bool? _closeConfirmedOffers;
+  bool? _okForCurrentLocationOffers;
+  String? _offerMatchPercentage;
+  num? _meanComputedRating;
+  num? _numberofcomputations;
+  num? _meanUserRating;
+  num? _numberofusersRating;
+  String? _blocked;
+  dynamic _blockedtime;
+  String? _subscriptionStatus;
+  dynamic _paymentDone;
+  dynamic _paymentDate;
+  String? _deviceToken;
+  String? _createdAt;
+  String? _modified;
+  List<Followers>? _followers;
+  List<Following>? _following;
+ToCounter copyWith({  num? id,
+  String? displayname,
+  String? phonenumber,
+  String? username,
+  String? email,
+  String? profilePicture,
+  String? pagePicture,
+  String? desc,
+  String? placeORperson,
+  String? businessORpublic,
+  dynamic classification,
+  bool? movable,
+  String? addressORarea,
+  String? operatingaddress,
+  String? maritalstatus,
+  dynamic passportnumber,
+  dynamic dateofissue,
+  String? nationality,
+  String? dateofbirth,
+  String? gender,
+  String? religion,
+  dynamic subreligion,
+  String? caste,
+  String? subsect,
+  String? searchPagePositionPreferences,
+  dynamic offeringAreaPreference,
+  dynamic offerCategoryPreference,
+  dynamic offerSegmentPreference,
+  dynamic offerSubSegmentPreference,
+  String? currentLocation,
+  bool? wantToBuy,
+  bool? wantToSell,
+  bool? optDelivery,
+  bool? closeConfirmedOffers,
+  bool? okForCurrentLocationOffers,
+  String? offerMatchPercentage,
+  num? meanComputedRating,
+  num? numberofcomputations,
+  num? meanUserRating,
+  num? numberofusersRating,
+  String? blocked,
+  dynamic blockedtime,
+  String? subscriptionStatus,
+  dynamic paymentDone,
+  dynamic paymentDate,
+  String? deviceToken,
+  String? createdAt,
+  String? modified,
+  List<Followers>? followers,
+  List<Following>? following,
+}) => ToCounter(  id: id ?? _id,
+  displayname: displayname ?? _displayname,
+  phonenumber: phonenumber ?? _phonenumber,
+  username: username ?? _username,
+  email: email ?? _email,
+  profilePicture: profilePicture ?? _profilePicture,
+  pagePicture: pagePicture ?? _pagePicture,
+  desc: desc ?? _desc,
+  placeORperson: placeORperson ?? _placeORperson,
+  businessORpublic: businessORpublic ?? _businessORpublic,
+  classification: classification ?? _classification,
+  movable: movable ?? _movable,
+  addressORarea: addressORarea ?? _addressORarea,
+  operatingaddress: operatingaddress ?? _operatingaddress,
+  maritalstatus: maritalstatus ?? _maritalstatus,
+  passportnumber: passportnumber ?? _passportnumber,
+  dateofissue: dateofissue ?? _dateofissue,
+  nationality: nationality ?? _nationality,
+  dateofbirth: dateofbirth ?? _dateofbirth,
+  gender: gender ?? _gender,
+  religion: religion ?? _religion,
+  subreligion: subreligion ?? _subreligion,
+  caste: caste ?? _caste,
+  subsect: subsect ?? _subsect,
+  searchPagePositionPreferences: searchPagePositionPreferences ?? _searchPagePositionPreferences,
+  offeringAreaPreference: offeringAreaPreference ?? _offeringAreaPreference,
+  offerCategoryPreference: offerCategoryPreference ?? _offerCategoryPreference,
+  offerSegmentPreference: offerSegmentPreference ?? _offerSegmentPreference,
+  offerSubSegmentPreference: offerSubSegmentPreference ?? _offerSubSegmentPreference,
+  currentLocation: currentLocation ?? _currentLocation,
+  wantToBuy: wantToBuy ?? _wantToBuy,
+  wantToSell: wantToSell ?? _wantToSell,
+  optDelivery: optDelivery ?? _optDelivery,
+  closeConfirmedOffers: closeConfirmedOffers ?? _closeConfirmedOffers,
+  okForCurrentLocationOffers: okForCurrentLocationOffers ?? _okForCurrentLocationOffers,
+  offerMatchPercentage: offerMatchPercentage ?? _offerMatchPercentage,
+  meanComputedRating: meanComputedRating ?? _meanComputedRating,
+  numberofcomputations: numberofcomputations ?? _numberofcomputations,
+  meanUserRating: meanUserRating ?? _meanUserRating,
+  numberofusersRating: numberofusersRating ?? _numberofusersRating,
+  blocked: blocked ?? _blocked,
+  blockedtime: blockedtime ?? _blockedtime,
+  subscriptionStatus: subscriptionStatus ?? _subscriptionStatus,
+  paymentDone: paymentDone ?? _paymentDone,
+  paymentDate: paymentDate ?? _paymentDate,
+  deviceToken: deviceToken ?? _deviceToken,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  followers: followers ?? _followers,
+  following: following ?? _following,
+);
+  num? get id => _id;
+  String? get displayname => _displayname;
+  String? get phonenumber => _phonenumber;
+  String? get username => _username;
+  String? get email => _email;
+  String? get profilePicture => _profilePicture;
+  String? get pagePicture => _pagePicture;
+  String? get desc => _desc;
+  String? get placeORperson => _placeORperson;
+  String? get businessORpublic => _businessORpublic;
+  dynamic get classification => _classification;
+  bool? get movable => _movable;
+  String? get addressORarea => _addressORarea;
+  String? get operatingaddress => _operatingaddress;
+  String? get maritalstatus => _maritalstatus;
+  dynamic get passportnumber => _passportnumber;
+  dynamic get dateofissue => _dateofissue;
+  String? get nationality => _nationality;
+  String? get dateofbirth => _dateofbirth;
+  String? get gender => _gender;
+  String? get religion => _religion;
+  dynamic get subreligion => _subreligion;
+  String? get caste => _caste;
+  String? get subsect => _subsect;
+  String? get searchPagePositionPreferences => _searchPagePositionPreferences;
+  dynamic get offeringAreaPreference => _offeringAreaPreference;
+  dynamic get offerCategoryPreference => _offerCategoryPreference;
+  dynamic get offerSegmentPreference => _offerSegmentPreference;
+  dynamic get offerSubSegmentPreference => _offerSubSegmentPreference;
+  String? get currentLocation => _currentLocation;
+  bool? get wantToBuy => _wantToBuy;
+  bool? get wantToSell => _wantToSell;
+  bool? get optDelivery => _optDelivery;
+  bool? get closeConfirmedOffers => _closeConfirmedOffers;
+  bool? get okForCurrentLocationOffers => _okForCurrentLocationOffers;
+  String? get offerMatchPercentage => _offerMatchPercentage;
+  num? get meanComputedRating => _meanComputedRating;
+  num? get numberofcomputations => _numberofcomputations;
+  num? get meanUserRating => _meanUserRating;
+  num? get numberofusersRating => _numberofusersRating;
+  String? get blocked => _blocked;
+  dynamic get blockedtime => _blockedtime;
+  String? get subscriptionStatus => _subscriptionStatus;
+  dynamic get paymentDone => _paymentDone;
+  dynamic get paymentDate => _paymentDate;
+  String? get deviceToken => _deviceToken;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  List<Followers>? get followers => _followers;
+  List<Following>? get following => _following;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['displayname'] = _displayname;
+    map['phonenumber'] = _phonenumber;
+    map['username'] = _username;
+    map['email'] = _email;
+    map['profile_picture'] = _profilePicture;
+    map['page_picture'] = _pagePicture;
+    map['desc'] = _desc;
+    map['placeORperson'] = _placeORperson;
+    map['businessORpublic'] = _businessORpublic;
+    map['classification'] = _classification;
+    map['movable'] = _movable;
+    map['addressORarea'] = _addressORarea;
+    map['operatingaddress'] = _operatingaddress;
+    map['maritalstatus'] = _maritalstatus;
+    map['passportnumber'] = _passportnumber;
+    map['dateofissue'] = _dateofissue;
+    map['nationality'] = _nationality;
+    map['dateofbirth'] = _dateofbirth;
+    map['gender'] = _gender;
+    map['religion'] = _religion;
+    map['subreligion'] = _subreligion;
+    map['caste'] = _caste;
+    map['subsect'] = _subsect;
+    map['search_page_position_preferences'] = _searchPagePositionPreferences;
+    map['Offering_area_preference'] = _offeringAreaPreference;
+    map['Offer_Category_preference'] = _offerCategoryPreference;
+    map['Offer_Segment_preference'] = _offerSegmentPreference;
+    map['Offer_Sub_Segment_preference'] = _offerSubSegmentPreference;
+    map['Current_Location'] = _currentLocation;
+    map['Want_to_Buy'] = _wantToBuy;
+    map['Want_to_sell'] = _wantToSell;
+    map['Opt_Delivery'] = _optDelivery;
+    map['Close_Confirmed_Offers'] = _closeConfirmedOffers;
+    map['Ok_for_Current_location_Offers'] = _okForCurrentLocationOffers;
+    map['Offer_match_percentage'] = _offerMatchPercentage;
+    map['mean_computed_rating'] = _meanComputedRating;
+    map['numberofcomputations'] = _numberofcomputations;
+    map['mean_user_rating'] = _meanUserRating;
+    map['numberofusers_rating'] = _numberofusersRating;
+    map['blocked'] = _blocked;
+    map['blockedtime'] = _blockedtime;
+    map['subscription_status'] = _subscriptionStatus;
+    map['payment_done'] = _paymentDone;
+    map['payment_date'] = _paymentDate;
+    map['deviceToken'] = _deviceToken;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    if (_followers != null) {
+      map['followers'] = _followers?.map((v) => v.toJson()).toList();
+    }
+    if (_following != null) {
+      map['following'] = _following?.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+
+
+class Following {
+  Following({
+      num? id, 
+      String? displayname, 
+      String? phonenumber, 
+      String? username, 
+      String? email, 
+      String? profilePicture, 
+      String? pagePicture, 
+      String? desc, 
+      String? placeORperson, 
+      String? businessORpublic,
+      dynamic classification,
+      bool? movable, 
+      String? addressORarea, 
+      String? operatingaddress, 
+      String? maritalstatus, 
+      dynamic passportnumber, 
+      dynamic dateofissue, 
+      dynamic nationality, 
+      dynamic dateofbirth, 
+      String? gender, 
+      dynamic religion, 
+      dynamic subreligion, 
+      dynamic caste, 
+      dynamic subsect, 
+      String? searchPagePositionPreferences, 
+      dynamic offeringAreaPreference, 
+      dynamic offerCategoryPreference, 
+      dynamic offerSegmentPreference, 
+      dynamic offerSubSegmentPreference, 
+      dynamic currentLocation, 
+      bool? wantToBuy, 
+      bool? wantToSell, 
+      bool? optDelivery, 
+      bool? closeConfirmedOffers, 
+      bool? okForCurrentLocationOffers, 
+      String? offerMatchPercentage, 
+      num? meanComputedRating, 
+      num? numberofcomputations, 
+      num? meanUserRating, 
+      num? numberofusersRating, 
+      String? blocked, 
+      dynamic blockedtime, 
+      String? subscriptionStatus, 
+      dynamic paymentDone, 
+      dynamic paymentDate, 
+      String? deviceToken, 
+      String? createdAt, 
+      String? modified, 
+      List<num>? followers, 
+      List<num>? following,}){
+    _id = id;
+    _displayname = displayname;
+    _phonenumber = phonenumber;
+    _username = username;
+    _email = email;
+    _profilePicture = profilePicture;
+    _pagePicture = pagePicture;
+    _desc = desc;
+    _placeORperson = placeORperson;
+    _businessORpublic = businessORpublic;
+    _classification = classification;
+    _movable = movable;
+    _addressORarea = addressORarea;
+    _operatingaddress = operatingaddress;
+    _maritalstatus = maritalstatus;
+    _passportnumber = passportnumber;
+    _dateofissue = dateofissue;
+    _nationality = nationality;
+    _dateofbirth = dateofbirth;
+    _gender = gender;
+    _religion = religion;
+    _subreligion = subreligion;
+    _caste = caste;
+    _subsect = subsect;
+    _searchPagePositionPreferences = searchPagePositionPreferences;
+    _offeringAreaPreference = offeringAreaPreference;
+    _offerCategoryPreference = offerCategoryPreference;
+    _offerSegmentPreference = offerSegmentPreference;
+    _offerSubSegmentPreference = offerSubSegmentPreference;
+    _currentLocation = currentLocation;
+    _wantToBuy = wantToBuy;
+    _wantToSell = wantToSell;
+    _optDelivery = optDelivery;
+    _closeConfirmedOffers = closeConfirmedOffers;
+    _okForCurrentLocationOffers = okForCurrentLocationOffers;
+    _offerMatchPercentage = offerMatchPercentage;
+    _meanComputedRating = meanComputedRating;
+    _numberofcomputations = numberofcomputations;
+    _meanUserRating = meanUserRating;
+    _numberofusersRating = numberofusersRating;
+    _blocked = blocked;
+    _blockedtime = blockedtime;
+    _subscriptionStatus = subscriptionStatus;
+    _paymentDone = paymentDone;
+    _paymentDate = paymentDate;
+    _deviceToken = deviceToken;
+    _createdAt = createdAt;
+    _modified = modified;
+    _followers = followers;
+    _following = following;
+}
+
+  Following.fromJson(dynamic json) {
+    _id = json['id'];
+    _displayname = json['displayname'];
+    _phonenumber = json['phonenumber'];
+    _username = json['username'];
+    _email = json['email'];
+    _profilePicture = json['profile_picture'];
+    _pagePicture = json['page_picture'];
+    _desc = json['desc'];
+    _placeORperson = json['placeORperson'];
+    _businessORpublic = json['businessORpublic'];
+    _classification = json['classification'];
+    _movable = json['movable'];
+    _addressORarea = json['addressORarea'];
+    _operatingaddress = json['operatingaddress'];
+    _maritalstatus = json['maritalstatus'];
+    _passportnumber = json['passportnumber'];
+    _dateofissue = json['dateofissue'];
+    _nationality = json['nationality'];
+    _dateofbirth = json['dateofbirth'];
+    _gender = json['gender'];
+    _religion = json['religion'];
+    _subreligion = json['subreligion'];
+    _caste = json['caste'];
+    _subsect = json['subsect'];
+    _searchPagePositionPreferences = json['search_page_position_preferences'];
+    _offeringAreaPreference = json['Offering_area_preference'];
+    _offerCategoryPreference = json['Offer_Category_preference'];
+    _offerSegmentPreference = json['Offer_Segment_preference'];
+    _offerSubSegmentPreference = json['Offer_Sub_Segment_preference'];
+    _currentLocation = json['Current_Location'];
+    _wantToBuy = json['Want_to_Buy'];
+    _wantToSell = json['Want_to_sell'];
+    _optDelivery = json['Opt_Delivery'];
+    _closeConfirmedOffers = json['Close_Confirmed_Offers'];
+    _okForCurrentLocationOffers = json['Ok_for_Current_location_Offers'];
+    _offerMatchPercentage = json['Offer_match_percentage'];
+    _meanComputedRating = json['mean_computed_rating'];
+    _numberofcomputations = json['numberofcomputations'];
+    _meanUserRating = json['mean_user_rating'];
+    _numberofusersRating = json['numberofusers_rating'];
+    _blocked = json['blocked'];
+    _blockedtime = json['blockedtime'];
+    _subscriptionStatus = json['subscription_status'];
+    _paymentDone = json['payment_done'];
+    _paymentDate = json['payment_date'];
+    _deviceToken = json['deviceToken'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    _followers = json['followers'] != null ? json['followers'].cast<num>() : [];
+    _following = json['following'] != null ? json['following'].cast<num>() : [];
+  }
+  num? _id;
+  String? _displayname;
+  String? _phonenumber;
+  String? _username;
+  String? _email;
+  String? _profilePicture;
+  String? _pagePicture;
+  String? _desc;
+  String? _placeORperson;
+  String? _businessORpublic;
+  dynamic _classification;
+  bool? _movable;
+  String? _addressORarea;
+  String? _operatingaddress;
+  String? _maritalstatus;
+  dynamic _passportnumber;
+  dynamic _dateofissue;
+  dynamic _nationality;
+  dynamic _dateofbirth;
+  String? _gender;
+  dynamic _religion;
+  dynamic _subreligion;
+  dynamic _caste;
+  dynamic _subsect;
+  String? _searchPagePositionPreferences;
+  dynamic _offeringAreaPreference;
+  dynamic _offerCategoryPreference;
+  dynamic _offerSegmentPreference;
+  dynamic _offerSubSegmentPreference;
+  dynamic _currentLocation;
+  bool? _wantToBuy;
+  bool? _wantToSell;
+  bool? _optDelivery;
+  bool? _closeConfirmedOffers;
+  bool? _okForCurrentLocationOffers;
+  String? _offerMatchPercentage;
+  num? _meanComputedRating;
+  num? _numberofcomputations;
+  num? _meanUserRating;
+  num? _numberofusersRating;
+  String? _blocked;
+  dynamic _blockedtime;
+  String? _subscriptionStatus;
+  dynamic _paymentDone;
+  dynamic _paymentDate;
+  String? _deviceToken;
+  String? _createdAt;
+  String? _modified;
+  List<num>? _followers;
+  List<num>? _following;
+Following copyWith({  num? id,
+  String? displayname,
+  String? phonenumber,
+  String? username,
+  String? email,
+  String? profilePicture,
+  String? pagePicture,
+  String? desc,
+  String? placeORperson,
+  String? businessORpublic,
+  dynamic classification,
+  bool? movable,
+  String? addressORarea,
+  String? operatingaddress,
+  String? maritalstatus,
+  dynamic passportnumber,
+  dynamic dateofissue,
+  dynamic nationality,
+  dynamic dateofbirth,
+  String? gender,
+  dynamic religion,
+  dynamic subreligion,
+  dynamic caste,
+  dynamic subsect,
+  String? searchPagePositionPreferences,
+  dynamic offeringAreaPreference,
+  dynamic offerCategoryPreference,
+  dynamic offerSegmentPreference,
+  dynamic offerSubSegmentPreference,
+  dynamic currentLocation,
+  bool? wantToBuy,
+  bool? wantToSell,
+  bool? optDelivery,
+  bool? closeConfirmedOffers,
+  bool? okForCurrentLocationOffers,
+  String? offerMatchPercentage,
+  num? meanComputedRating,
+  num? numberofcomputations,
+  num? meanUserRating,
+  num? numberofusersRating,
+  String? blocked,
+  dynamic blockedtime,
+  String? subscriptionStatus,
+  dynamic paymentDone,
+  dynamic paymentDate,
+  String? deviceToken,
+  String? createdAt,
+  String? modified,
+  List<num>? followers,
+  List<num>? following,
+}) => Following(  id: id ?? _id,
+  displayname: displayname ?? _displayname,
+  phonenumber: phonenumber ?? _phonenumber,
+  username: username ?? _username,
+  email: email ?? _email,
+  profilePicture: profilePicture ?? _profilePicture,
+  pagePicture: pagePicture ?? _pagePicture,
+  desc: desc ?? _desc,
+  placeORperson: placeORperson ?? _placeORperson,
+  businessORpublic: businessORpublic ?? _businessORpublic,
+  classification: classification ?? _classification,
+  movable: movable ?? _movable,
+  addressORarea: addressORarea ?? _addressORarea,
+  operatingaddress: operatingaddress ?? _operatingaddress,
+  maritalstatus: maritalstatus ?? _maritalstatus,
+  passportnumber: passportnumber ?? _passportnumber,
+  dateofissue: dateofissue ?? _dateofissue,
+  nationality: nationality ?? _nationality,
+  dateofbirth: dateofbirth ?? _dateofbirth,
+  gender: gender ?? _gender,
+  religion: religion ?? _religion,
+  subreligion: subreligion ?? _subreligion,
+  caste: caste ?? _caste,
+  subsect: subsect ?? _subsect,
+  searchPagePositionPreferences: searchPagePositionPreferences ?? _searchPagePositionPreferences,
+  offeringAreaPreference: offeringAreaPreference ?? _offeringAreaPreference,
+  offerCategoryPreference: offerCategoryPreference ?? _offerCategoryPreference,
+  offerSegmentPreference: offerSegmentPreference ?? _offerSegmentPreference,
+  offerSubSegmentPreference: offerSubSegmentPreference ?? _offerSubSegmentPreference,
+  currentLocation: currentLocation ?? _currentLocation,
+  wantToBuy: wantToBuy ?? _wantToBuy,
+  wantToSell: wantToSell ?? _wantToSell,
+  optDelivery: optDelivery ?? _optDelivery,
+  closeConfirmedOffers: closeConfirmedOffers ?? _closeConfirmedOffers,
+  okForCurrentLocationOffers: okForCurrentLocationOffers ?? _okForCurrentLocationOffers,
+  offerMatchPercentage: offerMatchPercentage ?? _offerMatchPercentage,
+  meanComputedRating: meanComputedRating ?? _meanComputedRating,
+  numberofcomputations: numberofcomputations ?? _numberofcomputations,
+  meanUserRating: meanUserRating ?? _meanUserRating,
+  numberofusersRating: numberofusersRating ?? _numberofusersRating,
+  blocked: blocked ?? _blocked,
+  blockedtime: blockedtime ?? _blockedtime,
+  subscriptionStatus: subscriptionStatus ?? _subscriptionStatus,
+  paymentDone: paymentDone ?? _paymentDone,
+  paymentDate: paymentDate ?? _paymentDate,
+  deviceToken: deviceToken ?? _deviceToken,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  followers: followers ?? _followers,
+  following: following ?? _following,
+);
+  num? get id => _id;
+  String? get displayname => _displayname;
+  String? get phonenumber => _phonenumber;
+  String? get username => _username;
+  String? get email => _email;
+  String? get profilePicture => _profilePicture;
+  String? get pagePicture => _pagePicture;
+  String? get desc => _desc;
+  String? get placeORperson => _placeORperson;
+  String? get businessORpublic => _businessORpublic;
+  dynamic get classification => _classification;
+  bool? get movable => _movable;
+  String? get addressORarea => _addressORarea;
+  String? get operatingaddress => _operatingaddress;
+  String? get maritalstatus => _maritalstatus;
+  dynamic get passportnumber => _passportnumber;
+  dynamic get dateofissue => _dateofissue;
+  dynamic get nationality => _nationality;
+  dynamic get dateofbirth => _dateofbirth;
+  String? get gender => _gender;
+  dynamic get religion => _religion;
+  dynamic get subreligion => _subreligion;
+  dynamic get caste => _caste;
+  dynamic get subsect => _subsect;
+  String? get searchPagePositionPreferences => _searchPagePositionPreferences;
+  dynamic get offeringAreaPreference => _offeringAreaPreference;
+  dynamic get offerCategoryPreference => _offerCategoryPreference;
+  dynamic get offerSegmentPreference => _offerSegmentPreference;
+  dynamic get offerSubSegmentPreference => _offerSubSegmentPreference;
+  dynamic get currentLocation => _currentLocation;
+  bool? get wantToBuy => _wantToBuy;
+  bool? get wantToSell => _wantToSell;
+  bool? get optDelivery => _optDelivery;
+  bool? get closeConfirmedOffers => _closeConfirmedOffers;
+  bool? get okForCurrentLocationOffers => _okForCurrentLocationOffers;
+  String? get offerMatchPercentage => _offerMatchPercentage;
+  num? get meanComputedRating => _meanComputedRating;
+  num? get numberofcomputations => _numberofcomputations;
+  num? get meanUserRating => _meanUserRating;
+  num? get numberofusersRating => _numberofusersRating;
+  String? get blocked => _blocked;
+  dynamic get blockedtime => _blockedtime;
+  String? get subscriptionStatus => _subscriptionStatus;
+  dynamic get paymentDone => _paymentDone;
+  dynamic get paymentDate => _paymentDate;
+  String? get deviceToken => _deviceToken;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  List<num>? get followers => _followers;
+  List<num>? get following => _following;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['displayname'] = _displayname;
+    map['phonenumber'] = _phonenumber;
+    map['username'] = _username;
+    map['email'] = _email;
+    map['profile_picture'] = _profilePicture;
+    map['page_picture'] = _pagePicture;
+    map['desc'] = _desc;
+    map['placeORperson'] = _placeORperson;
+    map['businessORpublic'] = _businessORpublic;
+    map['classification'] = _classification;
+    map['movable'] = _movable;
+    map['addressORarea'] = _addressORarea;
+    map['operatingaddress'] = _operatingaddress;
+    map['maritalstatus'] = _maritalstatus;
+    map['passportnumber'] = _passportnumber;
+    map['dateofissue'] = _dateofissue;
+    map['nationality'] = _nationality;
+    map['dateofbirth'] = _dateofbirth;
+    map['gender'] = _gender;
+    map['religion'] = _religion;
+    map['subreligion'] = _subreligion;
+    map['caste'] = _caste;
+    map['subsect'] = _subsect;
+    map['search_page_position_preferences'] = _searchPagePositionPreferences;
+    map['Offering_area_preference'] = _offeringAreaPreference;
+    map['Offer_Category_preference'] = _offerCategoryPreference;
+    map['Offer_Segment_preference'] = _offerSegmentPreference;
+    map['Offer_Sub_Segment_preference'] = _offerSubSegmentPreference;
+    map['Current_Location'] = _currentLocation;
+    map['Want_to_Buy'] = _wantToBuy;
+    map['Want_to_sell'] = _wantToSell;
+    map['Opt_Delivery'] = _optDelivery;
+    map['Close_Confirmed_Offers'] = _closeConfirmedOffers;
+    map['Ok_for_Current_location_Offers'] = _okForCurrentLocationOffers;
+    map['Offer_match_percentage'] = _offerMatchPercentage;
+    map['mean_computed_rating'] = _meanComputedRating;
+    map['numberofcomputations'] = _numberofcomputations;
+    map['mean_user_rating'] = _meanUserRating;
+    map['numberofusers_rating'] = _numberofusersRating;
+    map['blocked'] = _blocked;
+    map['blockedtime'] = _blockedtime;
+    map['subscription_status'] = _subscriptionStatus;
+    map['payment_done'] = _paymentDone;
+    map['payment_date'] = _paymentDate;
+    map['deviceToken'] = _deviceToken;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    map['followers'] = _followers;
+    map['following'] = _following;
+    return map;
+  }
+
+}
+
+
+
+class Followers {
+  Followers({
+      num? id, 
+      String? displayname, 
+      String? phonenumber, 
+      String? username, 
+      String? email, 
+      String? profilePicture, 
+      String? pagePicture, 
+      String? desc, 
+      String? placeORperson, 
+      String? businessORpublic,
+      dynamic classification,
+      bool? movable, 
+      String? addressORarea, 
+      String? operatingaddress, 
+      String? maritalstatus, 
+      dynamic passportnumber, 
+      dynamic dateofissue, 
+      dynamic nationality, 
+      dynamic dateofbirth, 
+      String? gender, 
+      dynamic religion, 
+      dynamic subreligion, 
+      dynamic caste, 
+      dynamic subsect, 
+      String? searchPagePositionPreferences, 
+      dynamic offeringAreaPreference, 
+      dynamic offerCategoryPreference, 
+      dynamic offerSegmentPreference, 
+      dynamic offerSubSegmentPreference, 
+      dynamic currentLocation, 
+      bool? wantToBuy, 
+      bool? wantToSell, 
+      bool? optDelivery, 
+      bool? closeConfirmedOffers, 
+      bool? okForCurrentLocationOffers, 
+      String? offerMatchPercentage, 
+      num? meanComputedRating, 
+      num? numberofcomputations, 
+      num? meanUserRating, 
+      num? numberofusersRating, 
+      String? blocked, 
+      dynamic blockedtime, 
+      String? subscriptionStatus, 
+      dynamic paymentDone, 
+      dynamic paymentDate, 
+      String? deviceToken, 
+      String? createdAt, 
+      String? modified, 
+      List<num>? followers, 
+      List<num>? following,}){
+    _id = id;
+    _displayname = displayname;
+    _phonenumber = phonenumber;
+    _username = username;
+    _email = email;
+    _profilePicture = profilePicture;
+    _pagePicture = pagePicture;
+    _desc = desc;
+    _placeORperson = placeORperson;
+    _businessORpublic = businessORpublic;
+    _classification = classification;
+    _movable = movable;
+    _addressORarea = addressORarea;
+    _operatingaddress = operatingaddress;
+    _maritalstatus = maritalstatus;
+    _passportnumber = passportnumber;
+    _dateofissue = dateofissue;
+    _nationality = nationality;
+    _dateofbirth = dateofbirth;
+    _gender = gender;
+    _religion = religion;
+    _subreligion = subreligion;
+    _caste = caste;
+    _subsect = subsect;
+    _searchPagePositionPreferences = searchPagePositionPreferences;
+    _offeringAreaPreference = offeringAreaPreference;
+    _offerCategoryPreference = offerCategoryPreference;
+    _offerSegmentPreference = offerSegmentPreference;
+    _offerSubSegmentPreference = offerSubSegmentPreference;
+    _currentLocation = currentLocation;
+    _wantToBuy = wantToBuy;
+    _wantToSell = wantToSell;
+    _optDelivery = optDelivery;
+    _closeConfirmedOffers = closeConfirmedOffers;
+    _okForCurrentLocationOffers = okForCurrentLocationOffers;
+    _offerMatchPercentage = offerMatchPercentage;
+    _meanComputedRating = meanComputedRating;
+    _numberofcomputations = numberofcomputations;
+    _meanUserRating = meanUserRating;
+    _numberofusersRating = numberofusersRating;
+    _blocked = blocked;
+    _blockedtime = blockedtime;
+    _subscriptionStatus = subscriptionStatus;
+    _paymentDone = paymentDone;
+    _paymentDate = paymentDate;
+    _deviceToken = deviceToken;
+    _createdAt = createdAt;
+    _modified = modified;
+    _followers = followers;
+    _following = following;
+}
+
+  Followers.fromJson(dynamic json) {
+    _id = json['id'];
+    _displayname = json['displayname'];
+    _phonenumber = json['phonenumber'];
+    _username = json['username'];
+    _email = json['email'];
+    _profilePicture = json['profile_picture'];
+    _pagePicture = json['page_picture'];
+    _desc = json['desc'];
+    _placeORperson = json['placeORperson'];
+    _businessORpublic = json['businessORpublic'];
+    _classification = json['classification'];
+    _movable = json['movable'];
+    _addressORarea = json['addressORarea'];
+    _operatingaddress = json['operatingaddress'];
+    _maritalstatus = json['maritalstatus'];
+    _passportnumber = json['passportnumber'];
+    _dateofissue = json['dateofissue'];
+    _nationality = json['nationality'];
+    _dateofbirth = json['dateofbirth'];
+    _gender = json['gender'];
+    _religion = json['religion'];
+    _subreligion = json['subreligion'];
+    _caste = json['caste'];
+    _subsect = json['subsect'];
+    _searchPagePositionPreferences = json['search_page_position_preferences'];
+    _offeringAreaPreference = json['Offering_area_preference'];
+    _offerCategoryPreference = json['Offer_Category_preference'];
+    _offerSegmentPreference = json['Offer_Segment_preference'];
+    _offerSubSegmentPreference = json['Offer_Sub_Segment_preference'];
+    _currentLocation = json['Current_Location'];
+    _wantToBuy = json['Want_to_Buy'];
+    _wantToSell = json['Want_to_sell'];
+    _optDelivery = json['Opt_Delivery'];
+    _closeConfirmedOffers = json['Close_Confirmed_Offers'];
+    _okForCurrentLocationOffers = json['Ok_for_Current_location_Offers'];
+    _offerMatchPercentage = json['Offer_match_percentage'];
+    _meanComputedRating = json['mean_computed_rating'];
+    _numberofcomputations = json['numberofcomputations'];
+    _meanUserRating = json['mean_user_rating'];
+    _numberofusersRating = json['numberofusers_rating'];
+    _blocked = json['blocked'];
+    _blockedtime = json['blockedtime'];
+    _subscriptionStatus = json['subscription_status'];
+    _paymentDone = json['payment_done'];
+    _paymentDate = json['payment_date'];
+    _deviceToken = json['deviceToken'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    _followers = json['followers'] != null ? json['followers'].cast<num>() : [];
+    _following = json['following'] != null ? json['following'].cast<num>() : [];
+  }
+  num? _id;
+  String? _displayname;
+  String? _phonenumber;
+  String? _username;
+  String? _email;
+  String? _profilePicture;
+  String? _pagePicture;
+  String? _desc;
+  String? _placeORperson;
+  String? _businessORpublic;
+  dynamic _classification;
+  bool? _movable;
+  String? _addressORarea;
+  String? _operatingaddress;
+  String? _maritalstatus;
+  dynamic _passportnumber;
+  dynamic _dateofissue;
+  dynamic _nationality;
+  dynamic _dateofbirth;
+  String? _gender;
+  dynamic _religion;
+  dynamic _subreligion;
+  dynamic _caste;
+  dynamic _subsect;
+  String? _searchPagePositionPreferences;
+  dynamic _offeringAreaPreference;
+  dynamic _offerCategoryPreference;
+  dynamic _offerSegmentPreference;
+  dynamic _offerSubSegmentPreference;
+  dynamic _currentLocation;
+  bool? _wantToBuy;
+  bool? _wantToSell;
+  bool? _optDelivery;
+  bool? _closeConfirmedOffers;
+  bool? _okForCurrentLocationOffers;
+  String? _offerMatchPercentage;
+  num? _meanComputedRating;
+  num? _numberofcomputations;
+  num? _meanUserRating;
+  num? _numberofusersRating;
+  String? _blocked;
+  dynamic _blockedtime;
+  String? _subscriptionStatus;
+  dynamic _paymentDone;
+  dynamic _paymentDate;
+  String? _deviceToken;
+  String? _createdAt;
+  String? _modified;
+  List<num>? _followers;
+  List<num>? _following;
+Followers copyWith({  num? id,
+  String? displayname,
+  String? phonenumber,
+  String? username,
+  String? email,
+  String? profilePicture,
+  String? pagePicture,
+  String? desc,
+  String? placeORperson,
+  String? businessORpublic,
+  dynamic classification,
+  bool? movable,
+  String? addressORarea,
+  String? operatingaddress,
+  String? maritalstatus,
+  dynamic passportnumber,
+  dynamic dateofissue,
+  dynamic nationality,
+  dynamic dateofbirth,
+  String? gender,
+  dynamic religion,
+  dynamic subreligion,
+  dynamic caste,
+  dynamic subsect,
+  String? searchPagePositionPreferences,
+  dynamic offeringAreaPreference,
+  dynamic offerCategoryPreference,
+  dynamic offerSegmentPreference,
+  dynamic offerSubSegmentPreference,
+  dynamic currentLocation,
+  bool? wantToBuy,
+  bool? wantToSell,
+  bool? optDelivery,
+  bool? closeConfirmedOffers,
+  bool? okForCurrentLocationOffers,
+  String? offerMatchPercentage,
+  num? meanComputedRating,
+  num? numberofcomputations,
+  num? meanUserRating,
+  num? numberofusersRating,
+  String? blocked,
+  dynamic blockedtime,
+  String? subscriptionStatus,
+  dynamic paymentDone,
+  dynamic paymentDate,
+  String? deviceToken,
+  String? createdAt,
+  String? modified,
+  List<num>? followers,
+  List<num>? following,
+}) => Followers(  id: id ?? _id,
+  displayname: displayname ?? _displayname,
+  phonenumber: phonenumber ?? _phonenumber,
+  username: username ?? _username,
+  email: email ?? _email,
+  profilePicture: profilePicture ?? _profilePicture,
+  pagePicture: pagePicture ?? _pagePicture,
+  desc: desc ?? _desc,
+  placeORperson: placeORperson ?? _placeORperson,
+  businessORpublic: businessORpublic ?? _businessORpublic,
+  classification: classification ?? _classification,
+  movable: movable ?? _movable,
+  addressORarea: addressORarea ?? _addressORarea,
+  operatingaddress: operatingaddress ?? _operatingaddress,
+  maritalstatus: maritalstatus ?? _maritalstatus,
+  passportnumber: passportnumber ?? _passportnumber,
+  dateofissue: dateofissue ?? _dateofissue,
+  nationality: nationality ?? _nationality,
+  dateofbirth: dateofbirth ?? _dateofbirth,
+  gender: gender ?? _gender,
+  religion: religion ?? _religion,
+  subreligion: subreligion ?? _subreligion,
+  caste: caste ?? _caste,
+  subsect: subsect ?? _subsect,
+  searchPagePositionPreferences: searchPagePositionPreferences ?? _searchPagePositionPreferences,
+  offeringAreaPreference: offeringAreaPreference ?? _offeringAreaPreference,
+  offerCategoryPreference: offerCategoryPreference ?? _offerCategoryPreference,
+  offerSegmentPreference: offerSegmentPreference ?? _offerSegmentPreference,
+  offerSubSegmentPreference: offerSubSegmentPreference ?? _offerSubSegmentPreference,
+  currentLocation: currentLocation ?? _currentLocation,
+  wantToBuy: wantToBuy ?? _wantToBuy,
+  wantToSell: wantToSell ?? _wantToSell,
+  optDelivery: optDelivery ?? _optDelivery,
+  closeConfirmedOffers: closeConfirmedOffers ?? _closeConfirmedOffers,
+  okForCurrentLocationOffers: okForCurrentLocationOffers ?? _okForCurrentLocationOffers,
+  offerMatchPercentage: offerMatchPercentage ?? _offerMatchPercentage,
+  meanComputedRating: meanComputedRating ?? _meanComputedRating,
+  numberofcomputations: numberofcomputations ?? _numberofcomputations,
+  meanUserRating: meanUserRating ?? _meanUserRating,
+  numberofusersRating: numberofusersRating ?? _numberofusersRating,
+  blocked: blocked ?? _blocked,
+  blockedtime: blockedtime ?? _blockedtime,
+  subscriptionStatus: subscriptionStatus ?? _subscriptionStatus,
+  paymentDone: paymentDone ?? _paymentDone,
+  paymentDate: paymentDate ?? _paymentDate,
+  deviceToken: deviceToken ?? _deviceToken,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  followers: followers ?? _followers,
+  following: following ?? _following,
+);
+  num? get id => _id;
+  String? get displayname => _displayname;
+  String? get phonenumber => _phonenumber;
+  String? get username => _username;
+  String? get email => _email;
+  String? get profilePicture => _profilePicture;
+  String? get pagePicture => _pagePicture;
+  String? get desc => _desc;
+  String? get placeORperson => _placeORperson;
+  String? get businessORpublic => _businessORpublic;
+  dynamic get classification => _classification;
+  bool? get movable => _movable;
+  String? get addressORarea => _addressORarea;
+  String? get operatingaddress => _operatingaddress;
+  String? get maritalstatus => _maritalstatus;
+  dynamic get passportnumber => _passportnumber;
+  dynamic get dateofissue => _dateofissue;
+  dynamic get nationality => _nationality;
+  dynamic get dateofbirth => _dateofbirth;
+  String? get gender => _gender;
+  dynamic get religion => _religion;
+  dynamic get subreligion => _subreligion;
+  dynamic get caste => _caste;
+  dynamic get subsect => _subsect;
+  String? get searchPagePositionPreferences => _searchPagePositionPreferences;
+  dynamic get offeringAreaPreference => _offeringAreaPreference;
+  dynamic get offerCategoryPreference => _offerCategoryPreference;
+  dynamic get offerSegmentPreference => _offerSegmentPreference;
+  dynamic get offerSubSegmentPreference => _offerSubSegmentPreference;
+  dynamic get currentLocation => _currentLocation;
+  bool? get wantToBuy => _wantToBuy;
+  bool? get wantToSell => _wantToSell;
+  bool? get optDelivery => _optDelivery;
+  bool? get closeConfirmedOffers => _closeConfirmedOffers;
+  bool? get okForCurrentLocationOffers => _okForCurrentLocationOffers;
+  String? get offerMatchPercentage => _offerMatchPercentage;
+  num? get meanComputedRating => _meanComputedRating;
+  num? get numberofcomputations => _numberofcomputations;
+  num? get meanUserRating => _meanUserRating;
+  num? get numberofusersRating => _numberofusersRating;
+  String? get blocked => _blocked;
+  dynamic get blockedtime => _blockedtime;
+  String? get subscriptionStatus => _subscriptionStatus;
+  dynamic get paymentDone => _paymentDone;
+  dynamic get paymentDate => _paymentDate;
+  String? get deviceToken => _deviceToken;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  List<num>? get followers => _followers;
+  List<num>? get following => _following;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['displayname'] = _displayname;
+    map['phonenumber'] = _phonenumber;
+    map['username'] = _username;
+    map['email'] = _email;
+    map['profile_picture'] = _profilePicture;
+    map['page_picture'] = _pagePicture;
+    map['desc'] = _desc;
+    map['placeORperson'] = _placeORperson;
+    map['businessORpublic'] = _businessORpublic;
+    map['classification'] = _classification;
+    map['movable'] = _movable;
+    map['addressORarea'] = _addressORarea;
+    map['operatingaddress'] = _operatingaddress;
+    map['maritalstatus'] = _maritalstatus;
+    map['passportnumber'] = _passportnumber;
+    map['dateofissue'] = _dateofissue;
+    map['nationality'] = _nationality;
+    map['dateofbirth'] = _dateofbirth;
+    map['gender'] = _gender;
+    map['religion'] = _religion;
+    map['subreligion'] = _subreligion;
+    map['caste'] = _caste;
+    map['subsect'] = _subsect;
+    map['search_page_position_preferences'] = _searchPagePositionPreferences;
+    map['Offering_area_preference'] = _offeringAreaPreference;
+    map['Offer_Category_preference'] = _offerCategoryPreference;
+    map['Offer_Segment_preference'] = _offerSegmentPreference;
+    map['Offer_Sub_Segment_preference'] = _offerSubSegmentPreference;
+    map['Current_Location'] = _currentLocation;
+    map['Want_to_Buy'] = _wantToBuy;
+    map['Want_to_sell'] = _wantToSell;
+    map['Opt_Delivery'] = _optDelivery;
+    map['Close_Confirmed_Offers'] = _closeConfirmedOffers;
+    map['Ok_for_Current_location_Offers'] = _okForCurrentLocationOffers;
+    map['Offer_match_percentage'] = _offerMatchPercentage;
+    map['mean_computed_rating'] = _meanComputedRating;
+    map['numberofcomputations'] = _numberofcomputations;
+    map['mean_user_rating'] = _meanUserRating;
+    map['numberofusers_rating'] = _numberofusersRating;
+    map['blocked'] = _blocked;
+    map['blockedtime'] = _blockedtime;
+    map['subscription_status'] = _subscriptionStatus;
+    map['payment_done'] = _paymentDone;
+    map['payment_date'] = _paymentDate;
+    map['deviceToken'] = _deviceToken;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    map['followers'] = _followers;
+    map['following'] = _following;
+    return map;
+  }
+
+}
+
+
+
+class Offer {
+  Offer({
+      num? id, 
+      OfferConditions? offerConditions, 
+      List<OfferItems>? offerItems, 
+      num? offerfavoritecount,
+    List<num>? offerviewcount,
+    num? offercopycount,
+      num? offerresponses, 
+      List<OfferBids>? offerBids, 
+      List<CounterdUser>? counterdUser,
+      List<num>? abusedUser,
+      num? offerLike,
+      num? offerDisLike, 
+      num? comments, 
+      String? addres, 
+      String? offerareas, 
+      String? privacy, 
+      String? tabactivity, 
+      String? buyORsell, 
+      bool? offerconfirmed, 
+      bool? offerinform, 
+      bool? offertemplate, 
+      bool? offerevent, 
+      String? offerexecutestart, 
+      String? offerexecuteend, 
+      bool? offersignedoff, 
+      String? offerstatus, 
+      String? offerservicepercentage, 
+      int? computedRating,
+      String? userRating, 
+      dynamic offerincepted, 
+      String? createdAt, 
+      String? modified, 
+      String? slug, 
+      Subscribers? subscribers, 
+      Category? category, 
+      Segment? segment, 
+      Subsegment? subsegment,}){
+    _id = id;
+    _offerConditions = offerConditions;
+    _offerItems = offerItems;
+    _offerfavoritecount = offerfavoritecount;
+    _offerviewcount = offerviewcount;
+    _offercopycount = offercopycount;
+    _offerresponses = offerresponses;
+    _offerBids = offerBids;
+    _counterdUser = counterdUser;
+    _abusedUser = abusedUser;
+    _offerLike = offerLike;
+    _offerDisLike = offerDisLike;
+    _comments = comments;
+    _addres = addres;
+    _offerareas = offerareas;
+    _privacy = privacy;
+    _tabactivity = tabactivity;
+    _buyORsell = buyORsell;
+    _offerconfirmed = offerconfirmed;
+    _offerinform = offerinform;
+    _offertemplate = offertemplate;
+    _offerevent = offerevent;
+    _offerexecutestart = offerexecutestart;
+    _offerexecuteend = offerexecuteend;
+    _offersignedoff = offersignedoff;
+    _offerstatus = offerstatus;
+    _offerservicepercentage = offerservicepercentage;
+    _computedRating = computedRating;
+    _userRating = userRating;
+    _offerincepted = offerincepted;
+    _createdAt = createdAt;
+    _modified = modified;
+    _slug = slug;
+    _subscribers = subscribers;
+    _category = category;
+    _segment = segment;
+    _subsegment = subsegment;
+}
+
+  Offer.fromJson(dynamic json) {
+    _id = json['id'];
+    _offerConditions = json['offer_conditions'] != null ? OfferConditions.fromJson(json['offer_conditions']) : null;
+    if (json['offer_items'] != null) {
+      _offerItems = [];
+      json['offer_items'].forEach((v) {
+        _offerItems?.add(OfferItems.fromJson(v));
+      });
+    }
+    _offerfavoritecount = json['offerfavoritecount'];
+    _offerviewcount = json['offerviewcount'] != null ? json['offerviewcount'].cast<num>() : [];
+    _offercopycount = json['offercopycount'];
+    _offerresponses = json['offerresponses'];
+    if (json['offer_bids'] != null) {
+      _offerBids = [];
+      json['offer_bids'].forEach((v) {
+        _offerBids?.add(OfferBids.fromJson(v));
+      });
+    }
+    if (json['counterd_user'] != null) {
+      _counterdUser = [];
+      json['counterd_user'].forEach((v) {
+        _counterdUser?.add(CounterdUser.fromJson(v));
+      });
+    }
+    _abusedUser = json['abused_user'] != [] ? json['abused_user'].cast<num>() : [];
+    _offerLike = json['offerLike'];
+    _offerDisLike = json['offerDisLike'];
+    _comments = json['comments'];
+    _addres = json['addres'];
+    _offerareas = json['offerareas'];
+    _privacy = json['privacy'];
+    _tabactivity = json['tabactivity'];
+    _buyORsell = json['buyORsell'];
+    _offerconfirmed = json['offerconfirmed'];
+    _offerinform = json['offerinform'];
+    _offertemplate = json['offertemplate'];
+    _offerevent = json['offerevent'];
+    _offerexecutestart = json['offerexecutestart'];
+    _offerexecuteend = json['offerexecuteend'];
+    _offersignedoff = json['offersignedoff'];
+    _offerstatus = json['offerstatus'];
+    _offerservicepercentage = json['offerservicepercentage'];
+    _computedRating = json['computed_rating'];
+    _userRating = json['user_rating'];
+    _offerincepted = json['offerincepted'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    _slug = json['slug'];
+    _subscribers = json['subscribers'] != null ? Subscribers.fromJson(json['subscribers']) : null;
+    _category = json['category'] != null ? Category.fromJson(json['category']) : null;
+    _segment = json['segment'] != null ? Segment.fromJson(json['segment']) : null;
+    _subsegment = json['subsegment'] != null ? Subsegment.fromJson(json['subsegment']) : null;
+  }
+  num? _id;
+  OfferConditions? _offerConditions;
+  List<OfferItems>? _offerItems;
+  num? _offerfavoritecount;
+  List<num>? _offerviewcount;
+  num? _offercopycount;
+  num? _offerresponses;
+  List<OfferBids>? _offerBids;
+  List<CounterdUser>? _counterdUser;
+  List<num>? _abusedUser;
+  num? _offerLike;
+  num? _offerDisLike;
+  num? _comments;
+  String? _addres;
+  String? _offerareas;
+  String? _privacy;
+  String? _tabactivity;
+  String? _buyORsell;
+  bool? _offerconfirmed;
+  bool? _offerinform;
+  bool? _offertemplate;
+  bool? _offerevent;
+  String? _offerexecutestart;
+  String? _offerexecuteend;
+  bool? _offersignedoff;
+  String? _offerstatus;
+  String? _offerservicepercentage;
+  int? _computedRating;
+  String? _userRating;
+  dynamic _offerincepted;
+  String? _createdAt;
+  String? _modified;
+  String? _slug;
+  Subscribers? _subscribers;
+  Category? _category;
+  Segment? _segment;
+  Subsegment? _subsegment;
+Offer copyWith({  num? id,
+  OfferConditions? offerConditions,
+  List<OfferItems>? offerItems,
+  num? offerfavoritecount,
+  List<num>? offerviewcount,
+  num? offercopycount,
+  num? offerresponses,
+  List<OfferBids>? offerBids,
+  List<CounterdUser>? counterdUser,
+  List<num>? abusedUser,
+  num? offerLike,
+  num? offerDisLike,
+  num? comments,
+  String? addres,
+  String? offerareas,
+  String? privacy,
+  String? tabactivity,
+  String? buyORsell,
+  bool? offerconfirmed,
+  bool? offerinform,
+  bool? offertemplate,
+  bool? offerevent,
+  String? offerexecutestart,
+  String? offerexecuteend,
+  bool? offersignedoff,
+  String? offerstatus,
+  String? offerservicepercentage,
+  int? computedRating,
+  String? userRating,
+  dynamic offerincepted,
+  String? createdAt,
+  String? modified,
+  String? slug,
+  Subscribers? subscribers,
+  Category? category,
+  Segment? segment,
+  Subsegment? subsegment,
+}) => Offer(  id: id ?? _id,
+  offerConditions: offerConditions ?? _offerConditions,
+  offerItems: offerItems ?? _offerItems,
+  offerfavoritecount: offerfavoritecount ?? _offerfavoritecount,
+  offerviewcount: offerviewcount ?? _offerviewcount,
+  offercopycount: offercopycount ?? _offercopycount,
+  offerresponses: offerresponses ?? _offerresponses,
+  offerBids: offerBids ?? _offerBids,
+  counterdUser: counterdUser ?? _counterdUser,
+  abusedUser: abusedUser ?? _abusedUser,
+  offerLike: offerLike ?? _offerLike,
+  offerDisLike: offerDisLike ?? _offerDisLike,
+  comments: comments ?? _comments,
+  addres: addres ?? _addres,
+  offerareas: offerareas ?? _offerareas,
+  privacy: privacy ?? _privacy,
+  tabactivity: tabactivity ?? _tabactivity,
+  buyORsell: buyORsell ?? _buyORsell,
+  offerconfirmed: offerconfirmed ?? _offerconfirmed,
+  offerinform: offerinform ?? _offerinform,
+  offertemplate: offertemplate ?? _offertemplate,
+  offerevent: offerevent ?? _offerevent,
+  offerexecutestart: offerexecutestart ?? _offerexecutestart,
+  offerexecuteend: offerexecuteend ?? _offerexecuteend,
+  offersignedoff: offersignedoff ?? _offersignedoff,
+  offerstatus: offerstatus ?? _offerstatus,
+  offerservicepercentage: offerservicepercentage ?? _offerservicepercentage,
+  computedRating: computedRating ?? _computedRating,
+  userRating: userRating ?? _userRating,
+  offerincepted: offerincepted ?? _offerincepted,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  slug: slug ?? _slug,
+  subscribers: subscribers ?? _subscribers,
+  category: category ?? _category,
+  segment: segment ?? _segment,
+  subsegment: subsegment ?? _subsegment,
+);
+  num? get id => _id;
+  OfferConditions? get offerConditions => _offerConditions;
+  List<OfferItems>? get offerItems => _offerItems;
+  num? get offerfavoritecount => _offerfavoritecount;
+  List<num>? get offerviewcount => _offerviewcount;
+  num? get offercopycount => _offercopycount;
+  num? get offerresponses => _offerresponses;
+  List<OfferBids>? get offerBids => _offerBids;
+  List<CounterdUser>? get counterdUser => _counterdUser;
+  List<num>? get abusedUser => _abusedUser;
+  num? get offerLike => _offerLike;
+  num? get offerDisLike => _offerDisLike;
+  num? get comments => _comments;
+  String? get addres => _addres;
+  String? get offerareas => _offerareas;
+  String? get privacy => _privacy;
+  String? get tabactivity => _tabactivity;
+  String? get buyORsell => _buyORsell;
+  bool? get offerconfirmed => _offerconfirmed;
+  bool? get offerinform => _offerinform;
+  bool? get offertemplate => _offertemplate;
+  bool? get offerevent => _offerevent;
+  String? get offerexecutestart => _offerexecutestart;
+  String? get offerexecuteend => _offerexecuteend;
+  bool? get offersignedoff => _offersignedoff;
+  String? get offerstatus => _offerstatus;
+  String? get offerservicepercentage => _offerservicepercentage;
+  int? get computedRating => _computedRating;
+  String? get userRating => _userRating;
+  dynamic get offerincepted => _offerincepted;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  String? get slug => _slug;
+  Subscribers? get subscribers => _subscribers;
+  Category? get category => _category;
+  Segment? get segment => _segment;
+  Subsegment? get subsegment => _subsegment;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    if (_offerConditions != null) {
+      map['offer_conditions'] = _offerConditions?.toJson();
+    }
+    if (_offerItems != null) {
+      map['offer_items'] = _offerItems?.map((v) => v.toJson()).toList();
+    }
+    map['offerfavoritecount'] = _offerfavoritecount;
+    map['offerviewcount'] = _offerviewcount;
+    map['abused_user'] = _abusedUser;
+    map['offercopycount'] = _offercopycount;
+    map['offerresponses'] = _offerresponses;
+    if (_offerBids != null) {
+      map['offer_bids'] = _offerBids?.map((v) => v.toJson()).toList();
+    }
+    if (_counterdUser != null) {
+      map['counterd_user'] = _counterdUser?.map((v) => v.toJson()).toList();
+    }
+    map['offerLike'] = _offerLike;
+    map['offerDisLike'] = _offerDisLike;
+    map['comments'] = _comments;
+    map['addres'] = _addres;
+    map['offerareas'] = _offerareas;
+    map['privacy'] = _privacy;
+    map['tabactivity'] = _tabactivity;
+    map['buyORsell'] = _buyORsell;
+    map['offerconfirmed'] = _offerconfirmed;
+    map['offerinform'] = _offerinform;
+    map['offertemplate'] = _offertemplate;
+    map['offerevent'] = _offerevent;
+    map['offerexecutestart'] = _offerexecutestart;
+    map['offerexecuteend'] = _offerexecuteend;
+    map['offersignedoff'] = _offersignedoff;
+    map['offerstatus'] = _offerstatus;
+    map['offerservicepercentage'] = _offerservicepercentage;
+    map['computed_rating'] = _computedRating;
+    map['user_rating'] = _userRating;
+    map['offerincepted'] = _offerincepted;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    map['slug'] = _slug;
+    if (_subscribers != null) {
+      map['subscribers'] = _subscribers?.toJson();
+    }
+    if (_category != null) {
+      map['category'] = _category?.toJson();
+    }
+    if (_segment != null) {
+      map['segment'] = _segment?.toJson();
+    }
+    if (_subsegment != null) {
+      map['subsegment'] = _subsegment?.toJson();
+    }
+    return map;
+  }
+
+}
+
+
+
+class Subsegment {
+  Subsegment({
+      num? id, 
+      String? name, 
+      num? segment,}){
+    _id = id;
+    _name = name;
+    _segment = segment;
+}
+
+  Subsegment.fromJson(dynamic json) {
+    _id = json['id'];
+    _name = json['name'];
+    _segment = json['segment'];
+  }
+  num? _id;
+  String? _name;
+  num? _segment;
+Subsegment copyWith({  num? id,
+  String? name,
+  num? segment,
+}) => Subsegment(  id: id ?? _id,
+  name: name ?? _name,
+  segment: segment ?? _segment,
+);
+  num? get id => _id;
+  String? get name => _name;
+  num? get segment => _segment;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['name'] = _name;
+    map['segment'] = _segment;
+    return map;
+  }
+
+}
+
+
+
+class Segment {
+  Segment({
+      num? id, 
+      String? name, 
+      num? category,}){
+    _id = id;
+    _name = name;
+    _category = category;
+}
+
+  Segment.fromJson(dynamic json) {
+    _id = json['id'];
+    _name = json['name'];
+    _category = json['category'];
+  }
+  num? _id;
+  String? _name;
+  num? _category;
+Segment copyWith({  num? id,
+  String? name,
+  num? category,
+}) => Segment(  id: id ?? _id,
+  name: name ?? _name,
+  category: category ?? _category,
+);
+  num? get id => _id;
+  String? get name => _name;
+  num? get category => _category;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['name'] = _name;
+    map['category'] = _category;
+    return map;
+  }
+
+}
+
+
+
+class Category {
+  Category({
+      num? id, 
+      String? name,}){
+    _id = id;
+    _name = name;
+}
+
+  Category.fromJson(dynamic json) {
+    _id = json['id'];
+    _name = json['name'];
+  }
+  num? _id;
+  String? _name;
+Category copyWith({  num? id,
+  String? name,
+}) => Category(  id: id ?? _id,
+  name: name ?? _name,
+);
+  num? get id => _id;
+  String? get name => _name;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['name'] = _name;
+    return map;
+  }
+
+}
+
+
+class Subscribers {
+  Subscribers({
+      num? id, 
+      String? displayname, 
+      String? phonenumber, 
+      String? username, 
+      String? email, 
+      String? profilePicture, 
+      String? pagePicture, 
+      String? desc, 
+      String? placeORperson, 
+      String? businessORpublic,
+      dynamic classification,
+      bool? movable, 
+      String? addressORarea, 
+      String? operatingaddress, 
+      String? maritalstatus, 
+      dynamic passportnumber, 
+      dynamic dateofissue, 
+      String? nationality, 
+      String? dateofbirth, 
+      String? gender, 
+      String? religion, 
+      dynamic subreligion, 
+      String? caste, 
+      String? subsect, 
+      String? searchPagePositionPreferences, 
+      dynamic offeringAreaPreference, 
+      dynamic offerCategoryPreference, 
+      dynamic offerSegmentPreference, 
+      dynamic offerSubSegmentPreference, 
+      String? currentLocation, 
+      bool? wantToBuy, 
+      bool? wantToSell, 
+      bool? optDelivery, 
+      bool? closeConfirmedOffers, 
+      bool? okForCurrentLocationOffers, 
+      String? offerMatchPercentage, 
+      num? meanComputedRating, 
+      num? numberofcomputations, 
+      num? meanUserRating, 
+      num? numberofusersRating, 
+      String? blocked, 
+      dynamic blockedtime, 
+      String? subscriptionStatus, 
+      dynamic paymentDone, 
+      dynamic paymentDate, 
+      String? deviceToken, 
+      String? createdAt, 
+      String? modified, 
+      List<num>? followers, 
+      List<num>? following,}){
+    _id = id;
+    _displayname = displayname;
+    _phonenumber = phonenumber;
+    _username = username;
+    _email = email;
+    _profilePicture = profilePicture;
+    _pagePicture = pagePicture;
+    _desc = desc;
+    _placeORperson = placeORperson;
+    _businessORpublic = businessORpublic;
+    _classification = classification;
+    _movable = movable;
+    _addressORarea = addressORarea;
+    _operatingaddress = operatingaddress;
+    _maritalstatus = maritalstatus;
+    _passportnumber = passportnumber;
+    _dateofissue = dateofissue;
+    _nationality = nationality;
+    _dateofbirth = dateofbirth;
+    _gender = gender;
+    _religion = religion;
+    _subreligion = subreligion;
+    _caste = caste;
+    _subsect = subsect;
+    _searchPagePositionPreferences = searchPagePositionPreferences;
+    _offeringAreaPreference = offeringAreaPreference;
+    _offerCategoryPreference = offerCategoryPreference;
+    _offerSegmentPreference = offerSegmentPreference;
+    _offerSubSegmentPreference = offerSubSegmentPreference;
+    _currentLocation = currentLocation;
+    _wantToBuy = wantToBuy;
+    _wantToSell = wantToSell;
+    _optDelivery = optDelivery;
+    _closeConfirmedOffers = closeConfirmedOffers;
+    _okForCurrentLocationOffers = okForCurrentLocationOffers;
+    _offerMatchPercentage = offerMatchPercentage;
+    _meanComputedRating = meanComputedRating;
+    _numberofcomputations = numberofcomputations;
+    _meanUserRating = meanUserRating;
+    _numberofusersRating = numberofusersRating;
+    _blocked = blocked;
+    _blockedtime = blockedtime;
+    _subscriptionStatus = subscriptionStatus;
+    _paymentDone = paymentDone;
+    _paymentDate = paymentDate;
+    _deviceToken = deviceToken;
+    _createdAt = createdAt;
+    _modified = modified;
+    _followers = followers;
+    _following = following;
+}
+
+  Subscribers.fromJson(dynamic json) {
+    _id = json['id'];
+    _displayname = json['displayname'];
+    _phonenumber = json['phonenumber'];
+    _username = json['username'];
+    _email = json['email'];
+    _profilePicture = json['profile_picture'];
+    _pagePicture = json['page_picture'];
+    _desc = json['desc'];
+    _placeORperson = json['placeORperson'];
+    _businessORpublic = json['businessORpublic'];
+    _classification = json['classification'];
+    _movable = json['movable'];
+    _addressORarea = json['addressORarea'];
+    _operatingaddress = json['operatingaddress'];
+    _maritalstatus = json['maritalstatus'];
+    _passportnumber = json['passportnumber'];
+    _dateofissue = json['dateofissue'];
+    _nationality = json['nationality'];
+    _dateofbirth = json['dateofbirth'];
+    _gender = json['gender'];
+    _religion = json['religion'];
+    _subreligion = json['subreligion'];
+    _caste = json['caste'];
+    _subsect = json['subsect'];
+    _searchPagePositionPreferences = json['search_page_position_preferences'];
+    _offeringAreaPreference = json['Offering_area_preference'];
+    _offerCategoryPreference = json['Offer_Category_preference'];
+    _offerSegmentPreference = json['Offer_Segment_preference'];
+    _offerSubSegmentPreference = json['Offer_Sub_Segment_preference'];
+    _currentLocation = json['Current_Location'];
+    _wantToBuy = json['Want_to_Buy'];
+    _wantToSell = json['Want_to_sell'];
+    _optDelivery = json['Opt_Delivery'];
+    _closeConfirmedOffers = json['Close_Confirmed_Offers'];
+    _okForCurrentLocationOffers = json['Ok_for_Current_location_Offers'];
+    _offerMatchPercentage = json['Offer_match_percentage'];
+    _meanComputedRating = json['mean_computed_rating'];
+    _numberofcomputations = json['numberofcomputations'];
+    _meanUserRating = json['mean_user_rating'];
+    _numberofusersRating = json['numberofusers_rating'];
+    _blocked = json['blocked'];
+    _blockedtime = json['blockedtime'];
+    _subscriptionStatus = json['subscription_status'];
+    _paymentDone = json['payment_done'];
+    _paymentDate = json['payment_date'];
+    _deviceToken = json['deviceToken'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    _followers = json['followers'] != null ? json['followers'].cast<num>() : [];
+    _following = json['following'] != null ? json['following'].cast<num>() : [];
+  }
+  num? _id;
+  String? _displayname;
+  String? _phonenumber;
+  String? _username;
+  String? _email;
+  String? _profilePicture;
+  String? _pagePicture;
+  String? _desc;
+  String? _placeORperson;
+  String? _businessORpublic;
+  dynamic _classification;
+  bool? _movable;
+  String? _addressORarea;
+  String? _operatingaddress;
+  String? _maritalstatus;
+  dynamic _passportnumber;
+  dynamic _dateofissue;
+  String? _nationality;
+  String? _dateofbirth;
+  String? _gender;
+  String? _religion;
+  dynamic _subreligion;
+  String? _caste;
+  String? _subsect;
+  String? _searchPagePositionPreferences;
+  dynamic _offeringAreaPreference;
+  dynamic _offerCategoryPreference;
+  dynamic _offerSegmentPreference;
+  dynamic _offerSubSegmentPreference;
+  String? _currentLocation;
+  bool? _wantToBuy;
+  bool? _wantToSell;
+  bool? _optDelivery;
+  bool? _closeConfirmedOffers;
+  bool? _okForCurrentLocationOffers;
+  String? _offerMatchPercentage;
+  num? _meanComputedRating;
+  num? _numberofcomputations;
+  num? _meanUserRating;
+  num? _numberofusersRating;
+  String? _blocked;
+  dynamic _blockedtime;
+  String? _subscriptionStatus;
+  dynamic _paymentDone;
+  dynamic _paymentDate;
+  String? _deviceToken;
+  String? _createdAt;
+  String? _modified;
+  List<num>? _followers;
+  List<num>? _following;
+Subscribers copyWith({  num? id,
+  String? displayname,
+  String? phonenumber,
+  String? username,
+  String? email,
+  String? profilePicture,
+  String? pagePicture,
+  String? desc,
+  String? placeORperson,
+  String? businessORpublic,
+  dynamic classification,
+  bool? movable,
+  String? addressORarea,
+  String? operatingaddress,
+  String? maritalstatus,
+  dynamic passportnumber,
+  dynamic dateofissue,
+  String? nationality,
+  String? dateofbirth,
+  String? gender,
+  String? religion,
+  dynamic subreligion,
+  String? caste,
+  String? subsect,
+  String? searchPagePositionPreferences,
+  dynamic offeringAreaPreference,
+  dynamic offerCategoryPreference,
+  dynamic offerSegmentPreference,
+  dynamic offerSubSegmentPreference,
+  String? currentLocation,
+  bool? wantToBuy,
+  bool? wantToSell,
+  bool? optDelivery,
+  bool? closeConfirmedOffers,
+  bool? okForCurrentLocationOffers,
+  String? offerMatchPercentage,
+  num? meanComputedRating,
+  num? numberofcomputations,
+  num? meanUserRating,
+  num? numberofusersRating,
+  String? blocked,
+  dynamic blockedtime,
+  String? subscriptionStatus,
+  dynamic paymentDone,
+  dynamic paymentDate,
+  String? deviceToken,
+  String? createdAt,
+  String? modified,
+  List<num>? followers,
+  List<num>? following,
+}) => Subscribers(  id: id ?? _id,
+  displayname: displayname ?? _displayname,
+  phonenumber: phonenumber ?? _phonenumber,
+  username: username ?? _username,
+  email: email ?? _email,
+  profilePicture: profilePicture ?? _profilePicture,
+  pagePicture: pagePicture ?? _pagePicture,
+  desc: desc ?? _desc,
+  placeORperson: placeORperson ?? _placeORperson,
+  businessORpublic: businessORpublic ?? _businessORpublic,
+  classification: classification ?? _classification,
+  movable: movable ?? _movable,
+  addressORarea: addressORarea ?? _addressORarea,
+  operatingaddress: operatingaddress ?? _operatingaddress,
+  maritalstatus: maritalstatus ?? _maritalstatus,
+  passportnumber: passportnumber ?? _passportnumber,
+  dateofissue: dateofissue ?? _dateofissue,
+  nationality: nationality ?? _nationality,
+  dateofbirth: dateofbirth ?? _dateofbirth,
+  gender: gender ?? _gender,
+  religion: religion ?? _religion,
+  subreligion: subreligion ?? _subreligion,
+  caste: caste ?? _caste,
+  subsect: subsect ?? _subsect,
+  searchPagePositionPreferences: searchPagePositionPreferences ?? _searchPagePositionPreferences,
+  offeringAreaPreference: offeringAreaPreference ?? _offeringAreaPreference,
+  offerCategoryPreference: offerCategoryPreference ?? _offerCategoryPreference,
+  offerSegmentPreference: offerSegmentPreference ?? _offerSegmentPreference,
+  offerSubSegmentPreference: offerSubSegmentPreference ?? _offerSubSegmentPreference,
+  currentLocation: currentLocation ?? _currentLocation,
+  wantToBuy: wantToBuy ?? _wantToBuy,
+  wantToSell: wantToSell ?? _wantToSell,
+  optDelivery: optDelivery ?? _optDelivery,
+  closeConfirmedOffers: closeConfirmedOffers ?? _closeConfirmedOffers,
+  okForCurrentLocationOffers: okForCurrentLocationOffers ?? _okForCurrentLocationOffers,
+  offerMatchPercentage: offerMatchPercentage ?? _offerMatchPercentage,
+  meanComputedRating: meanComputedRating ?? _meanComputedRating,
+  numberofcomputations: numberofcomputations ?? _numberofcomputations,
+  meanUserRating: meanUserRating ?? _meanUserRating,
+  numberofusersRating: numberofusersRating ?? _numberofusersRating,
+  blocked: blocked ?? _blocked,
+  blockedtime: blockedtime ?? _blockedtime,
+  subscriptionStatus: subscriptionStatus ?? _subscriptionStatus,
+  paymentDone: paymentDone ?? _paymentDone,
+  paymentDate: paymentDate ?? _paymentDate,
+  deviceToken: deviceToken ?? _deviceToken,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  followers: followers ?? _followers,
+  following: following ?? _following,
+);
+  num? get id => _id;
+  String? get displayname => _displayname;
+  String? get phonenumber => _phonenumber;
+  String? get username => _username;
+  String? get email => _email;
+  String? get profilePicture => _profilePicture;
+  String? get pagePicture => _pagePicture;
+  String? get desc => _desc;
+  String? get placeORperson => _placeORperson;
+  String? get businessORpublic => _businessORpublic;
+  dynamic get classification => _classification;
+  bool? get movable => _movable;
+  String? get addressORarea => _addressORarea;
+  String? get operatingaddress => _operatingaddress;
+  String? get maritalstatus => _maritalstatus;
+  dynamic get passportnumber => _passportnumber;
+  dynamic get dateofissue => _dateofissue;
+  String? get nationality => _nationality;
+  String? get dateofbirth => _dateofbirth;
+  String? get gender => _gender;
+  String? get religion => _religion;
+  dynamic get subreligion => _subreligion;
+  String? get caste => _caste;
+  String? get subsect => _subsect;
+  String? get searchPagePositionPreferences => _searchPagePositionPreferences;
+  dynamic get offeringAreaPreference => _offeringAreaPreference;
+  dynamic get offerCategoryPreference => _offerCategoryPreference;
+  dynamic get offerSegmentPreference => _offerSegmentPreference;
+  dynamic get offerSubSegmentPreference => _offerSubSegmentPreference;
+  String? get currentLocation => _currentLocation;
+  bool? get wantToBuy => _wantToBuy;
+  bool? get wantToSell => _wantToSell;
+  bool? get optDelivery => _optDelivery;
+  bool? get closeConfirmedOffers => _closeConfirmedOffers;
+  bool? get okForCurrentLocationOffers => _okForCurrentLocationOffers;
+  String? get offerMatchPercentage => _offerMatchPercentage;
+  num? get meanComputedRating => _meanComputedRating;
+  num? get numberofcomputations => _numberofcomputations;
+  num? get meanUserRating => _meanUserRating;
+  num? get numberofusersRating => _numberofusersRating;
+  String? get blocked => _blocked;
+  dynamic get blockedtime => _blockedtime;
+  String? get subscriptionStatus => _subscriptionStatus;
+  dynamic get paymentDone => _paymentDone;
+  dynamic get paymentDate => _paymentDate;
+  String? get deviceToken => _deviceToken;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  List<num>? get followers => _followers;
+  List<num>? get following => _following;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['displayname'] = _displayname;
+    map['phonenumber'] = _phonenumber;
+    map['username'] = _username;
+    map['email'] = _email;
+    map['profile_picture'] = _profilePicture;
+    map['page_picture'] = _pagePicture;
+    map['desc'] = _desc;
+    map['placeORperson'] = _placeORperson;
+    map['businessORpublic'] = _businessORpublic;
+    map['classification'] = _classification;
+    map['movable'] = _movable;
+    map['addressORarea'] = _addressORarea;
+    map['operatingaddress'] = _operatingaddress;
+    map['maritalstatus'] = _maritalstatus;
+    map['passportnumber'] = _passportnumber;
+    map['dateofissue'] = _dateofissue;
+    map['nationality'] = _nationality;
+    map['dateofbirth'] = _dateofbirth;
+    map['gender'] = _gender;
+    map['religion'] = _religion;
+    map['subreligion'] = _subreligion;
+    map['caste'] = _caste;
+    map['subsect'] = _subsect;
+    map['search_page_position_preferences'] = _searchPagePositionPreferences;
+    map['Offering_area_preference'] = _offeringAreaPreference;
+    map['Offer_Category_preference'] = _offerCategoryPreference;
+    map['Offer_Segment_preference'] = _offerSegmentPreference;
+    map['Offer_Sub_Segment_preference'] = _offerSubSegmentPreference;
+    map['Current_Location'] = _currentLocation;
+    map['Want_to_Buy'] = _wantToBuy;
+    map['Want_to_sell'] = _wantToSell;
+    map['Opt_Delivery'] = _optDelivery;
+    map['Close_Confirmed_Offers'] = _closeConfirmedOffers;
+    map['Ok_for_Current_location_Offers'] = _okForCurrentLocationOffers;
+    map['Offer_match_percentage'] = _offerMatchPercentage;
+    map['mean_computed_rating'] = _meanComputedRating;
+    map['numberofcomputations'] = _numberofcomputations;
+    map['mean_user_rating'] = _meanUserRating;
+    map['numberofusers_rating'] = _numberofusersRating;
+    map['blocked'] = _blocked;
+    map['blockedtime'] = _blockedtime;
+    map['subscription_status'] = _subscriptionStatus;
+    map['payment_done'] = _paymentDone;
+    map['payment_date'] = _paymentDate;
+    map['deviceToken'] = _deviceToken;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    map['followers'] = _followers;
+    map['following'] = _following;
+    return map;
+  }
+
+}
+
+
+class CounterdUser {
+  CounterdUser({
+      num? id, 
+      String? name, 
+      String? displayName, 
+      String? image,}){
+    _id = id;
+    _name = name;
+    _displayName = displayName;
+    _image = image;
+}
+
+  CounterdUser.fromJson(dynamic json) {
+    _id = json['id'];
+    _name = json['name'];
+    _displayName = json['display_name'];
+    _image = json['image'];
+  }
+  num? _id;
+  String? _name;
+  String? _displayName;
+  String? _image;
+CounterdUser copyWith({  num? id,
+  String? name,
+  String? displayName,
+  String? image,
+}) => CounterdUser(  id: id ?? _id,
+  name: name ?? _name,
+  displayName: displayName ?? _displayName,
+  image: image ?? _image,
+);
+  num? get id => _id;
+  String? get name => _name;
+  String? get displayName => _displayName;
+  String? get image => _image;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['name'] = _name;
+    map['display_name'] = _displayName;
+    map['image'] = _image;
+    return map;
+  }
+
+}
+
+
+
+class OfferBids {
+  OfferBids({
+      num? id, 
+      String? comment, 
+      String? createdAt, 
+      String? modified, 
+      FromCounter? fromCounter, 
+      dynamic toCounter,}){
+    _id = id;
+    _comment = comment;
+    _createdAt = createdAt;
+    _modified = modified;
+    _fromCounter = fromCounter;
+    _toCounter = toCounter;
+}
+
+  OfferBids.fromJson(dynamic json) {
+    _id = json['id'];
+    _comment = json['comment'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    _fromCounter = json['from_counter'] != null ? FromCounter.fromJson(json['from_counter']) : null;
+    _toCounter = json['to_counter'];
+  }
+  num? _id;
+  String? _comment;
+  String? _createdAt;
+  String? _modified;
+  FromCounter? _fromCounter;
+  dynamic _toCounter;
+OfferBids copyWith({  num? id,
+  String? comment,
+  String? createdAt,
+  String? modified,
+  FromCounter? fromCounter,
+  dynamic toCounter,
+}) => OfferBids(  id: id ?? _id,
+  comment: comment ?? _comment,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  fromCounter: fromCounter ?? _fromCounter,
+  toCounter: toCounter ?? _toCounter,
+);
+  num? get id => _id;
+  String? get comment => _comment;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  FromCounter? get fromCounter => _fromCounter;
+  dynamic get toCounter => _toCounter;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['comment'] = _comment;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    if (_fromCounter != null) {
+      map['from_counter'] = _fromCounter?.toJson();
+    }
+    map['to_counter'] = _toCounter;
+    return map;
+  }
+
+}
+
+
+class OfferItems {
+  OfferItems({
+    num? id,
+    OfferItemConditions? offerItemConditions,
+    List<ItemMedia>? itemMedia,
+    Unit? unit,
+    String? name,
+    dynamic desc,
+    num? quantity,
+    num? price,
+    num? advancePrice,
+    num? maintenancePrice,
+    String? currency,
+    bool? addon,
+    bool? required,
+    bool? toggleState,
+    num? offer,
+    AdvanceUnit ? advanceUnit,
+    MaintenanceUnit? maintenanceUnit,}){
+    _id = id;
+    _offerItemConditions = offerItemConditions;
+    _itemMedia = itemMedia;
+    _unit = unit;
+    _name = name;
+    _desc = desc;
+    _quantity = quantity;
+    _price = price;
+    _advancePrice = advancePrice;
+    _maintenancePrice = maintenancePrice;
+    _currency = currency;
+    _addon = addon;
+    _required = required;
+    _toggleState = toggleState;
+    _offer = offer;
+    _advanceUnit = advanceUnit;
+    _maintenanceUnit = maintenanceUnit;
+  }
+
+  OfferItems.fromJson(dynamic json) {
+    _id = json['id'];
+    _offerItemConditions = json['offer_item_conditions'] != null ? OfferItemConditions.fromJson(json['offer_item_conditions']) : null;
+    if (json['item_media'] != null) {
+      _itemMedia = [];
+      json['item_media'].forEach((v) {
+        _itemMedia?.add(ItemMedia.fromJson(v));
+      });
+    }
+    _unit = json['unit'] != null ? Unit.fromJson(json['unit']) : null;
+    _name = json['name'];
+    _desc = json['desc'];
+    _quantity = json['quantity'];
+    _price = json['price'];
+    _advancePrice = json['advance_price'];
+    _maintenancePrice = json['maintenance_price'];
+    _currency = json['currency'];
+    _addon = json['addon'];
+    _required = json['required'];
+    _toggleState = json['toggle_state'];
+    _offer = json['offer'];
+    _advanceUnit = json['advance_unit'] != null ? AdvanceUnit.fromJson(json['advance_unit']) : null;
+    _maintenanceUnit = json['maintenance_unit'] != null ? MaintenanceUnit.fromJson(json['maintenance_unit']) : null;
+  }
+  num? _id;
+  OfferItemConditions? _offerItemConditions;
+  List<ItemMedia>? _itemMedia;
+  Unit? _unit;
+  String? _name;
+  dynamic _desc;
+  num? _quantity;
+  num? _price;
+  num? _advancePrice;
+  num? _maintenancePrice;
+  String? _currency;
+  bool? _addon;
+  bool? _required;
+  bool? _toggleState;
+  num? _offer;
+  AdvanceUnit? _advanceUnit;
+  MaintenanceUnit? _maintenanceUnit;
+  OfferItems copyWith({  num? id,
+    OfferItemConditions? offerItemConditions,
+    List<ItemMedia>? itemMedia,
+    Unit? unit,
+    String? name,
+    dynamic desc,
+    num? quantity,
+    num? price,
+    num? advancePrice,
+    num? maintenancePrice,
+    String? currency,
+    bool? addon,
+    bool? required,
+    bool? toggleState,
+    num? offer,
+    AdvanceUnit? advanceUnit,
+    MaintenanceUnit? maintenanceUnit,
+  }) => OfferItems(  id: id ?? _id,
+    offerItemConditions: offerItemConditions ?? _offerItemConditions,
+    itemMedia: itemMedia ?? _itemMedia,
+    unit: unit ?? _unit,
+    name: name ?? _name,
+    desc: desc ?? _desc,
+    quantity: quantity ?? _quantity,
+    price: price ?? _price,
+    advancePrice: advancePrice ?? _advancePrice,
+    maintenancePrice: maintenancePrice ?? _maintenancePrice,
+    currency: currency ?? _currency,
+    addon: addon ?? _addon,
+    required: required ?? _required,
+    toggleState: toggleState ?? _toggleState,
+    offer: offer ?? _offer,
+    advanceUnit: advanceUnit ?? _advanceUnit,
+    maintenanceUnit: maintenanceUnit ?? _maintenanceUnit,
+  );
+  num? get id => _id;
+  OfferItemConditions? get offerItemConditions => _offerItemConditions;
+  List<ItemMedia>? get itemMedia => _itemMedia;
+  Unit? get unit => _unit;
+  String? get name => _name;
+  dynamic get desc => _desc;
+  num? get quantity => _quantity;
+  num? get price => _price;
+  num? get advancePrice => _advancePrice;
+  num? get maintenancePrice => _maintenancePrice;
+  String? get currency => _currency;
+  bool? get addon => _addon;
+  bool? get required => _required;
+  bool? get toggleState => _toggleState;
+  num? get offer => _offer;
+  AdvanceUnit? get advanceUnit => _advanceUnit;
+  MaintenanceUnit? get maintenanceUnit => _maintenanceUnit;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    if (_offerItemConditions != null) {
+      map['offer_item_conditions'] = _offerItemConditions?.toJson();
+    }
+    if (_itemMedia != null) {
+      map['item_media'] = _itemMedia?.map((v) => v.toJson()).toList();
+    }
+    if (_unit != null) {
+      map['unit'] = _unit?.toJson();
+    }
+    map['name'] = _name;
+    map['desc'] = _desc;
+    map['quantity'] = _quantity;
+    map['price'] = _price;
+    map['advance_price'] = _advancePrice;
+    map['maintenance_price'] = _maintenancePrice;
+    map['currency'] = _currency;
+    map['addon'] = _addon;
+    map['required'] = _required;
+    map['toggle_state'] = _toggleState;
+    map['offer'] = _offer;
+    if (_advanceUnit != null) {
+      map['advance_unit'] = _advanceUnit?.toJson();
+    }
+    if (_maintenanceUnit != null) {
+      map['maintenance_unit'] = _maintenanceUnit?.toJson();
+    }
+    return map;
+  }
+
+}
+
+
+class MaintenanceUnit {
+  MaintenanceUnit({
+    dynamic id,
+    dynamic name,}){
+    _id = id;
+    _name = name;
+  }
+
+  MaintenanceUnit.fromJson(dynamic json) {
+    var isNotEmpty = json["id"] != null;
+    var nameIsNotEmpty = json["id"] != null;
+    _id = isNotEmpty? json['id'] : null;
+    _name = nameIsNotEmpty ? json['name'] :null;
+  }
+  dynamic _id;
+  dynamic _name;
+  MaintenanceUnit copyWith({
+    dynamic id,
+    dynamic name,
+  }) => MaintenanceUnit(  id: id ?? _id,
+    name: name ?? _name,
+  );
+  dynamic get id => _id;
+  dynamic get name => _name;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['name'] = _name;
+    return map;
+  }
+
+}
+
+class AdvanceUnit {
+  AdvanceUnit({
+    dynamic id,
+    dynamic name,}){
+    _id = id;
+    _name = name;
+  }
+
+  AdvanceUnit.fromJson(dynamic json) {
+    var isNotEmpty = json["id"] != null;
+    var nameIsNotEmpty = json["id"] != null;
+    _id = isNotEmpty? json['id'] : null;
+    _name = nameIsNotEmpty ? json['name'] :null;
+  }
+  dynamic _id;
+  dynamic _name;
+  AdvanceUnit copyWith({
+    dynamic id,
+    dynamic name,
+  }) => AdvanceUnit(  id: id ?? _id,
+    name: name ?? _name,
+  );
+  dynamic get id => _id;
+  dynamic get name => _name;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['name'] = _name;
+    return map;
+  }
+
+}
+
+class Unit {
+  Unit({
+      num? id, 
+      String? name,}){
+    _id = id;
+    _name = name;
+}
+
+  Unit.fromJson(dynamic json) {
+    _id = json['id'];
+    _name = json['name'];
+  }
+  num? _id;
+  String? _name;
+Unit copyWith({  num? id,
+  String? name,
+}) => Unit(  id: id ?? _id,
+  name: name ?? _name,
+);
+  num? get id => _id;
+  String? get name => _name;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['name'] = _name;
+    return map;
+  }
+
+}
+
+class ItemMedia {
+  ItemMedia({
+    String? id,
+    String? file,
+    String? name,}){
+    _id = id;
+    _file = file;
+    _name = name;
+  }
+
+  ItemMedia.fromJson(dynamic json) {
+    _id = json['id'];
+    _file = json['file'];
+    _name = json['name'];
+  }
+  String? _id;
+  String? _file;
+  String? _name;
+  ItemMedia copyWith({  String? id,
+    String? file,
+    String? name,
+  }) => ItemMedia(  id: id ?? _id,
+    file: file ?? _file,
+    name: name ?? _name,
+  );
+  String? get id => _id;
+  String? get file => _file;
+  String? get name => _name;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['file'] = _file;
+    map['name'] = _name;
+    return map;
+  }
+
+}
+
+
+class OfferItemConditions {
+  OfferItemConditions({
+      num? id, 
+      List<Serviceperson>? serviceperson, 
+      String? periodicity, 
+      String? fromperiod, 
+      String? toperiod, 
+      String? duration, 
+      dynamic fromperiodtime, 
+      dynamic toperiodtime, 
+      String? durationoftime, 
+      String? fromlocation, 
+      String? tolocation, 
+      String? atlocation, 
+      String? priority, 
+      String? expiry, 
+      num? offerItem, 
+      List<num>? servicepersons,
+    String? disableFields,
+  }){
+    _id = id;
+    _serviceperson = serviceperson;
+    _periodicity = periodicity;
+    _fromperiod = fromperiod;
+    _toperiod = toperiod;
+    _duration = duration;
+    _fromperiodtime = fromperiodtime;
+    _toperiodtime = toperiodtime;
+    _durationoftime = durationoftime;
+    _fromlocation = fromlocation;
+    _tolocation = tolocation;
+    _atlocation = atlocation;
+    _priority = priority;
+    _expiry = expiry;
+    _offerItem = offerItem;
+    _servicepersons = servicepersons;
+    _disableFields = disableFields;
+}
+
+  OfferItemConditions.fromJson(dynamic json) {
+    _id = json['id'];
+    if (json['serviceperson'] != null) {
+      _serviceperson = [];
+      json['serviceperson'].forEach((v) {
+        _serviceperson?.add(Serviceperson.fromJson(v));
+      });
+    }
+    _periodicity = json['periodicity'];
+    _fromperiod = json['fromperiod'];
+    _toperiod = json['toperiod'];
+    _duration = json['duration'];
+    _fromperiodtime = json['fromperiodtime'];
+    _toperiodtime = json['toperiodtime'];
+    _durationoftime = json['durationoftime'];
+    _fromlocation = json['fromlocation'];
+    _tolocation = json['tolocation'];
+    _atlocation = json['atlocation'];
+    _priority = json['priority'];
+    _expiry = json['expiry'];
+    _offerItem = json['offer_item'];
+    _servicepersons = json['servicepersons'] != null ? json['servicepersons'].cast<num>() : [];
+    _disableFields = json['disable_fields'];
+  }
+  num? _id;
+  List<Serviceperson>? _serviceperson;
+  String? _periodicity;
+  String? _fromperiod;
+  String? _toperiod;
+  String? _duration;
+  dynamic _fromperiodtime;
+  dynamic _toperiodtime;
+  String? _durationoftime;
+  String? _fromlocation;
+  String? _tolocation;
+  String? _atlocation;
+  String? _priority;
+  String? _expiry;
+  num? _offerItem;
+  List<num>? _servicepersons;
+  String? _disableFields;
+OfferItemConditions copyWith({  num? id,
+  List<Serviceperson>? serviceperson,
+  String? periodicity,
+  String? fromperiod,
+  String? toperiod,
+  String? duration,
+  dynamic fromperiodtime,
+  dynamic toperiodtime,
+  String? durationoftime,
+  String? fromlocation,
+  String? tolocation,
+  String? atlocation,
+  String? priority,
+  String? expiry,
+  num? offerItem,
+  List<num>? servicepersons,
+  String? disableFields,
+}) => OfferItemConditions(  id: id ?? _id,
+  serviceperson: serviceperson ?? _serviceperson,
+  periodicity: periodicity ?? _periodicity,
+  fromperiod: fromperiod ?? _fromperiod,
+  toperiod: toperiod ?? _toperiod,
+  duration: duration ?? _duration,
+  fromperiodtime: fromperiodtime ?? _fromperiodtime,
+  toperiodtime: toperiodtime ?? _toperiodtime,
+  durationoftime: durationoftime ?? _durationoftime,
+  fromlocation: fromlocation ?? _fromlocation,
+  tolocation: tolocation ?? _tolocation,
+  atlocation: atlocation ?? _atlocation,
+  priority: priority ?? _priority,
+  expiry: expiry ?? _expiry,
+  offerItem: offerItem ?? _offerItem,
+  servicepersons: servicepersons ?? _servicepersons,
+  disableFields: disableFields ?? _disableFields,
+);
+  num? get id => _id;
+  List<Serviceperson>? get serviceperson => _serviceperson;
+  String? get periodicity => _periodicity;
+  String? get fromperiod => _fromperiod;
+  String? get toperiod => _toperiod;
+  String? get duration => _duration;
+  dynamic get fromperiodtime => _fromperiodtime;
+  dynamic get toperiodtime => _toperiodtime;
+  String? get durationoftime => _durationoftime;
+  String? get fromlocation => _fromlocation;
+  String? get tolocation => _tolocation;
+  String? get atlocation => _atlocation;
+  String? get priority => _priority;
+  String? get expiry => _expiry;
+  num? get offerItem => _offerItem;
+  List<num>? get servicepersons => _servicepersons;
+  String? get disableFields => _disableFields;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    if (_serviceperson != null) {
+      map['serviceperson'] = _serviceperson?.map((v) => v.toJson()).toList();
+    }
+    map['periodicity'] = _periodicity;
+    map['fromperiod'] = _fromperiod;
+    map['toperiod'] = _toperiod;
+    map['duration'] = _duration;
+    map['fromperiodtime'] = _fromperiodtime;
+    map['toperiodtime'] = _toperiodtime;
+    map['durationoftime'] = _durationoftime;
+    map['fromlocation'] = _fromlocation;
+    map['tolocation'] = _tolocation;
+    map['atlocation'] = _atlocation;
+    map['priority'] = _priority;
+    map['expiry'] = _expiry;
+    map['offer_item'] = _offerItem;
+    map['servicepersons'] = _servicepersons;
+    map['disable_fields'] = _disableFields;
+    return map;
+  }
+
+}
+
+class Serviceperson {
+  Serviceperson({
+      num? id, 
+      String? username, 
+      String? displayname,}){
+    _id = id;
+    _username = username;
+    _displayname = displayname;
+}
+
+  Serviceperson.fromJson(dynamic json) {
+    _id = json['id'];
+    _username = json['username'];
+    _displayname = json['displayname'];
+  }
+  num? _id;
+  String? _username;
+  String? _displayname;
+Serviceperson copyWith({  num? id,
+  String? username,
+  String? displayname,
+}) => Serviceperson(  id: id ?? _id,
+  username: username ?? _username,
+  displayname: displayname ?? _displayname,
+);
+  num? get id => _id;
+  String? get username => _username;
+  String? get displayname => _displayname;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['username'] = _username;
+    map['displayname'] = _displayname;
+    return map;
+  }
+
+}
+
+
+class OfferConditions {
+  OfferConditions({
+      num? id, 
+      List<Serviceperson>? serviceperson, 
+      String? periodicity, 
+      String? fromperiod, 
+      String? toperiod, 
+      String? duration, 
+      dynamic fromperiodtime, 
+      dynamic toperiodtime, 
+      String? durationoftime, 
+      String? fromlocation, 
+      String? tolocation, 
+      String? atlocation, 
+      String? priority, 
+      String? expiry, 
+      String? disableFields,
+      num? offer,
+      List<num>? servicepersons,}){
+    _id = id;
+    _serviceperson = serviceperson;
+    _periodicity = periodicity;
+    _fromperiod = fromperiod;
+    _toperiod = toperiod;
+    _duration = duration;
+    _fromperiodtime = fromperiodtime;
+    _toperiodtime = toperiodtime;
+    _durationoftime = durationoftime;
+    _fromlocation = fromlocation;
+    _tolocation = tolocation;
+    _atlocation = atlocation;
+    _priority = priority;
+    _expiry = expiry;
+    _offer = offer;
+    _servicepersons = servicepersons;
+    _disableFields = disableFields;
+}
+
+  OfferConditions.fromJson(dynamic json) {
+    _id = json['id'];
+    if (json['serviceperson'] != null) {
+      _serviceperson = [];
+      json['serviceperson'].forEach((v) {
+        _serviceperson?.add(Serviceperson.fromJson(v));
+      });
+    }
+    _periodicity = json['periodicity'];
+    _fromperiod = json['fromperiod'];
+    _toperiod = json['toperiod'];
+    _duration = json['duration'];
+    _fromperiodtime = json['fromperiodtime'];
+    _toperiodtime = json['toperiodtime'];
+    _durationoftime = json['durationoftime'];
+    _fromlocation = json['fromlocation'];
+    _tolocation = json['tolocation'];
+    _atlocation = json['atlocation'];
+    _priority = json['priority'];
+    _expiry = json['expiry'];
+    _offer = json['offer'];
+    _disableFields = json['disable_fields'];
+    _servicepersons = json['servicepersons'] != null ? json['servicepersons'].cast<num>() : [];
+  }
+  num? _id;
+  List<Serviceperson>? _serviceperson;
+  String? _periodicity;
+  String? _fromperiod;
+  String? _toperiod;
+  String? _duration;
+  dynamic _fromperiodtime;
+  dynamic _toperiodtime;
+  String? _durationoftime;
+  String? _fromlocation;
+  String? _tolocation;
+  String? _atlocation;
+  String? _priority;
+  String? _expiry;
+  String? _disableFields;
+  num? _offer;
+  List<num>? _servicepersons;
+OfferConditions copyWith({  num? id,
+  List<Serviceperson>? serviceperson,
+  String? periodicity,
+  String? fromperiod,
+  String? toperiod,
+  String? duration,
+  dynamic fromperiodtime,
+  dynamic toperiodtime,
+  String? durationoftime,
+  String? fromlocation,
+  String? tolocation,
+  String? atlocation,
+  String? priority,
+  String? expiry,
+  String? disableFields,
+  num? offer,
+  List<num>? servicepersons,
+}) => OfferConditions(  id: id ?? _id,
+  serviceperson: serviceperson ?? _serviceperson,
+  periodicity: periodicity ?? _periodicity,
+  fromperiod: fromperiod ?? _fromperiod,
+  toperiod: toperiod ?? _toperiod,
+  duration: duration ?? _duration,
+  fromperiodtime: fromperiodtime ?? _fromperiodtime,
+  toperiodtime: toperiodtime ?? _toperiodtime,
+  durationoftime: durationoftime ?? _durationoftime,
+  fromlocation: fromlocation ?? _fromlocation,
+  tolocation: tolocation ?? _tolocation,
+  atlocation: atlocation ?? _atlocation,
+  priority: priority ?? _priority,
+  expiry: expiry ?? _expiry,
+  offer: offer ?? _offer,
+  servicepersons: servicepersons ?? _servicepersons,
+  disableFields: disableFields ?? _disableFields,
+);
+  num? get id => _id;
+  List<Serviceperson>? get serviceperson => _serviceperson;
+  String? get periodicity => _periodicity;
+  String? get fromperiod => _fromperiod;
+  String? get toperiod => _toperiod;
+  String? get duration => _duration;
+  dynamic get fromperiodtime => _fromperiodtime;
+  dynamic get toperiodtime => _toperiodtime;
+  String? get durationoftime => _durationoftime;
+  String? get fromlocation => _fromlocation;
+  String? get tolocation => _tolocation;
+  String? get atlocation => _atlocation;
+  String? get priority => _priority;
+  String? get expiry => _expiry;
+  String? get disableFields => _disableFields;
+  num? get offer => _offer;
+  List<num>? get servicepersons => _servicepersons;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    if (_serviceperson != null) {
+      map['serviceperson'] = _serviceperson?.map((v) => v.toJson()).toList();
+    }
+    map['periodicity'] = _periodicity;
+    map['fromperiod'] = _fromperiod;
+    map['toperiod'] = _toperiod;
+    map['duration'] = _duration;
+    map['fromperiodtime'] = _fromperiodtime;
+    map['toperiodtime'] = _toperiodtime;
+    map['durationoftime'] = _durationoftime;
+    map['fromlocation'] = _fromlocation;
+    map['tolocation'] = _tolocation;
+    map['atlocation'] = _atlocation;
+    map['priority'] = _priority;
+    map['expiry'] = _expiry;
+    map['offer'] = _offer;
+    map['disable_fields'] = _disableFields;
+    map['servicepersons'] = _servicepersons;
+    return map;
+  }
+
+}
+
+
+class MainOfferDetails {
+  MainOfferDetails({
+      num? id, 
+      OfferConditions? offerConditions, 
+      List<OfferItems>? offerItems, 
+      num? offerfavoritecount,
+    List<num>? offerviewcount,
+    List<num>? abusedUser,
+    num? offercopycount,
+      num? offerresponses, 
+      List<OfferBids>? offerBids, 
+      List<CounterdUser>? counterdUser, 
+      num? offerLike, 
+      num? offerDisLike, 
+      num? comments, 
+      String? addres, 
+      String? offerareas, 
+      String? privacy, 
+      String? tabactivity, 
+      String? buyORsell, 
+      bool? offerconfirmed, 
+      bool? offerinform, 
+      bool? offertemplate, 
+      bool? offerevent, 
+      String? offerexecutestart, 
+      String? offerexecuteend, 
+      bool? offersignedoff, 
+      String? offerstatus, 
+      String? offerservicepercentage,
+      int? computedRating,
+      String? userRating, 
+      dynamic offerincepted, 
+      String? createdAt, 
+      String? modified, 
+      String? slug, 
+      Subscribers? subscribers, 
+      Category? category, 
+      Segment? segment, 
+      Subsegment? subsegment, 
+      bool? favourite, 
+      num? like,
+      List<ConfirmingUser>? ConfirmingSubscriber,
+  }){
+    _id = id;
+    _offerConditions = offerConditions;
+    _offerItems = offerItems;
+    _offerfavoritecount = offerfavoritecount;
+    _offerviewcount = offerviewcount;
+    _abusedUser = abusedUser;
+    _offercopycount = offercopycount;
+    _offerresponses = offerresponses;
+    _offerBids = offerBids;
+    _counterdUser = counterdUser;
+    _offerLike = offerLike;
+    _offerDisLike = offerDisLike;
+    _comments = comments;
+    _addres = addres;
+    _offerareas = offerareas;
+    _privacy = privacy;
+    _tabactivity = tabactivity;
+    _buyORsell = buyORsell;
+    _offerconfirmed = offerconfirmed;
+    _offerinform = offerinform;
+    _offertemplate = offertemplate;
+    _offerevent = offerevent;
+    _offerexecutestart = offerexecutestart;
+    _offerexecuteend = offerexecuteend;
+    _offersignedoff = offersignedoff;
+    _offerstatus = offerstatus;
+    _offerservicepercentage = offerservicepercentage;
+    _computedRating = computedRating;
+    _userRating = userRating;
+    _offerincepted = offerincepted;
+    _createdAt = createdAt;
+    _modified = modified;
+    _slug = slug;
+    _subscribers = subscribers;
+    _category = category;
+    _segment = segment;
+    _subsegment = subsegment;
+    _favourite = favourite;
+    _like = like;
+    _ConfirmingSubscriber = ConfirmingSubscriber;
+}
+
+  MainOfferDetails.fromJson(dynamic json) {
+    _id = json['id'];
+    _offerConditions = json['offer_conditions'] != null ? OfferConditions.fromJson(json['offer_conditions']) : null;
+    if (json['offer_items'] != null) {
+      _offerItems = [];
+      json['offer_items'].forEach((v) {
+        _offerItems?.add(OfferItems.fromJson(v));
+      });
+    }
+    _offerfavoritecount = json['offerfavoritecount'];
+    _offerviewcount = json['offerviewcount'] != null ? json['offerviewcount'].cast<num>() : [];
+    _abusedUser = json['abused_user'] != [] ? json['abused_user'].cast<num>() : [];
+    _offercopycount = json['offercopycount'];
+    _offerresponses = json['offerresponses'];
+    if (json['offer_bids'] != null) {
+      _offerBids = [];
+      json['offer_bids'].forEach((v) {
+        _offerBids?.add(OfferBids.fromJson(v));
+      });
+    }
+    if (json['counterd_user'] != null) {
+      _counterdUser = [];
+      json['counterd_user'].forEach((v) {
+        _counterdUser?.add(CounterdUser.fromJson(v));
+      });
+    }
+    _offerLike = json['offerLike'];
+    _offerDisLike = json['offerDisLike'];
+    _comments = json['comments'];
+    _addres = json['addres'];
+    _offerareas = json['offerareas'];
+    _privacy = json['privacy'];
+    _tabactivity = json['tabactivity'];
+    _buyORsell = json['buyORsell'];
+    _offerconfirmed = json['offerconfirmed'];
+    _offerinform = json['offerinform'];
+    _offertemplate = json['offertemplate'];
+    _offerevent = json['offerevent'];
+    _offerexecutestart = json['offerexecutestart'];
+    _offerexecuteend = json['offerexecuteend'];
+    _offersignedoff = json['offersignedoff'];
+    _offerstatus = json['offerstatus'];
+    _offerservicepercentage = json['offerservicepercentage'];
+    _computedRating = json['computed_rating'];
+    _userRating = json['user_rating'];
+    _offerincepted = json['offerincepted'];
+    _createdAt = json['created_at'];
+    _modified = json['modified'];
+    _slug = json['slug'];
+    _subscribers = json['subscribers'] != null ? Subscribers.fromJson(json['subscribers']) : null;
+    _category = json['category'] != null ? Category.fromJson(json['category']) : null;
+    _segment = json['segment'] != null ? Segment.fromJson(json['segment']) : null;
+    _subsegment = json['subsegment'] != null ? Subsegment.fromJson(json['subsegment']) : null;
+    _favourite = json['favourite'];
+    _like = json['like'];
+    if (json['confirmingsubscriber'] != null) {
+      _ConfirmingSubscriber = [];
+      json['confirmingsubscriber'].forEach((v) {
+        _ConfirmingSubscriber?.add(ConfirmingUser.fromJson(v));
+      });
+    }
+  }
+  num? _id;
+  OfferConditions? _offerConditions;
+  List<OfferItems>? _offerItems;
+  num? _offerfavoritecount;
+  List<num>? _offerviewcount;
+  List<num>? _abusedUser;
+  num? _offercopycount;
+  num? _offerresponses;
+  List<OfferBids>? _offerBids;
+  List<CounterdUser>? _counterdUser;
+  num? _offerLike;
+  num? _offerDisLike;
+  num? _comments;
+  String? _addres;
+  String? _offerareas;
+  String? _privacy;
+  String? _tabactivity;
+  String? _buyORsell;
+  bool? _offerconfirmed;
+  bool? _offerinform;
+  bool? _offertemplate;
+  bool? _offerevent;
+  String? _offerexecutestart;
+  String? _offerexecuteend;
+  bool? _offersignedoff;
+  String? _offerstatus;
+  String? _offerservicepercentage;
+  int? _computedRating;
+  String? _userRating;
+  dynamic _offerincepted;
+  String? _createdAt;
+  String? _modified;
+  String? _slug;
+  Subscribers? _subscribers;
+  Category? _category;
+  Segment? _segment;
+  Subsegment? _subsegment;
+  bool? _favourite;
+  num? _like;
+  List<ConfirmingUser>? _ConfirmingSubscriber;
+MainOfferDetails copyWith({  num? id,
+  OfferConditions? offerConditions,
+  List<OfferItems>? offerItems,
+  num? offerfavoritecount,
+  List<num>? offerviewcount,
+  List<num>? abusedUser,
+  num? offercopycount,
+  num? offerresponses,
+  List<OfferBids>? offerBids,
+  List<CounterdUser>? counterdUser,
+  num? offerLike,
+  num? offerDisLike,
+  num? comments,
+  String? addres,
+  String? offerareas,
+  String? privacy,
+  String? tabactivity,
+  String? buyORsell,
+  bool? offerconfirmed,
+  bool? offerinform,
+  bool? offertemplate,
+  bool? offerevent,
+  String? offerexecutestart,
+  String? offerexecuteend,
+  bool? offersignedoff,
+  String? offerstatus,
+  String? offerservicepercentage,
+  int? computedRating,
+  String? userRating,
+  dynamic offerincepted,
+  String? createdAt,
+  String? modified,
+  String? slug,
+  Subscribers? subscribers,
+  Category? category,
+  Segment? segment,
+  Subsegment? subsegment,
+  bool? favourite,
+  num? like,
+  List<ConfirmingUser>? ConfirmingSubscriber,
+}) => MainOfferDetails(  id: id ?? _id,
+  offerConditions: offerConditions ?? _offerConditions,
+  offerItems: offerItems ?? _offerItems,
+  offerfavoritecount: offerfavoritecount ?? _offerfavoritecount,
+  offerviewcount: offerviewcount ?? _offerviewcount,
+  abusedUser: abusedUser ?? _abusedUser,
+  offercopycount: offercopycount ?? _offercopycount,
+  offerresponses: offerresponses ?? _offerresponses,
+  offerBids: offerBids ?? _offerBids,
+  counterdUser: counterdUser ?? _counterdUser,
+  offerLike: offerLike ?? _offerLike,
+  offerDisLike: offerDisLike ?? _offerDisLike,
+  comments: comments ?? _comments,
+  addres: addres ?? _addres,
+  offerareas: offerareas ?? _offerareas,
+  privacy: privacy ?? _privacy,
+  tabactivity: tabactivity ?? _tabactivity,
+  buyORsell: buyORsell ?? _buyORsell,
+  offerconfirmed: offerconfirmed ?? _offerconfirmed,
+  offerinform: offerinform ?? _offerinform,
+  offertemplate: offertemplate ?? _offertemplate,
+  offerevent: offerevent ?? _offerevent,
+  offerexecutestart: offerexecutestart ?? _offerexecutestart,
+  offerexecuteend: offerexecuteend ?? _offerexecuteend,
+  offersignedoff: offersignedoff ?? _offersignedoff,
+  offerstatus: offerstatus ?? _offerstatus,
+  offerservicepercentage: offerservicepercentage ?? _offerservicepercentage,
+  computedRating: computedRating ?? _computedRating,
+  userRating: userRating ?? _userRating,
+  offerincepted: offerincepted ?? _offerincepted,
+  createdAt: createdAt ?? _createdAt,
+  modified: modified ?? _modified,
+  slug: slug ?? _slug,
+  subscribers: subscribers ?? _subscribers,
+  category: category ?? _category,
+  segment: segment ?? _segment,
+  subsegment: subsegment ?? _subsegment,
+  favourite: favourite ?? _favourite,
+  like: like ?? _like,
+  ConfirmingSubscriber: ConfirmingSubscriber ?? _ConfirmingSubscriber,
+);
+  num? get id => _id;
+  OfferConditions? get offerConditions => _offerConditions;
+  List<OfferItems>? get offerItems => _offerItems;
+  num? get offerfavoritecount => _offerfavoritecount;
+  List<num>? get offerviewcount => _offerviewcount;
+  List<num>? get abusedUser => _abusedUser;
+  num? get offercopycount => _offercopycount;
+  num? get offerresponses => _offerresponses;
+  List<OfferBids>? get offerBids => _offerBids;
+  List<CounterdUser>? get counterdUser => _counterdUser;
+  num? get offerLike => _offerLike;
+  num? get offerDisLike => _offerDisLike;
+  num? get comments => _comments;
+  String? get addres => _addres;
+  String? get offerareas => _offerareas;
+  String? get privacy => _privacy;
+  String? get tabactivity => _tabactivity;
+  String? get buyORsell => _buyORsell;
+  bool? get offerconfirmed => _offerconfirmed;
+  bool? get offerinform => _offerinform;
+  bool? get offertemplate => _offertemplate;
+  bool? get offerevent => _offerevent;
+  String? get offerexecutestart => _offerexecutestart;
+  String? get offerexecuteend => _offerexecuteend;
+  bool? get offersignedoff => _offersignedoff;
+  String? get offerstatus => _offerstatus;
+  String? get offerservicepercentage => _offerservicepercentage;
+  int? get computedRating => _computedRating;
+  String? get userRating => _userRating;
+  dynamic get offerincepted => _offerincepted;
+  String? get createdAt => _createdAt;
+  String? get modified => _modified;
+  String? get slug => _slug;
+  Subscribers? get subscribers => _subscribers;
+  Category? get category => _category;
+  Segment? get segment => _segment;
+  Subsegment? get subsegment => _subsegment;
+  bool? get favourite => _favourite;
+  num? get like => _like;
+  List<ConfirmingUser>? get ConfirmingSubscriber => _ConfirmingSubscriber;
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    if (_offerConditions != null) {
+      map['offer_conditions'] = _offerConditions?.toJson();
+    }
+    if (_offerItems != null) {
+      map['offer_items'] = _offerItems?.map((v) => v.toJson()).toList();
+    }
+    map['offerfavoritecount'] = _offerfavoritecount;
+    map['offerviewcount'] = _offerviewcount;
+    map['abused_user'] = _abusedUser;
+    map['offercopycount'] = _offercopycount;
+    map['offerresponses'] = _offerresponses;
+    if (_offerBids != null) {
+      map['offer_bids'] = _offerBids?.map((v) => v.toJson()).toList();
+    }
+    if (_counterdUser != null) {
+      map['counterd_user'] = _counterdUser?.map((v) => v.toJson()).toList();
+    }
+    map['offerLike'] = _offerLike;
+    map['offerDisLike'] = _offerDisLike;
+    map['comments'] = _comments;
+    map['addres'] = _addres;
+    map['offerareas'] = _offerareas;
+    map['privacy'] = _privacy;
+    map['tabactivity'] = _tabactivity;
+    map['buyORsell'] = _buyORsell;
+    map['offerconfirmed'] = _offerconfirmed;
+    map['offerinform'] = _offerinform;
+    map['offertemplate'] = _offertemplate;
+    map['offerevent'] = _offerevent;
+    map['offerexecutestart'] = _offerexecutestart;
+    map['offerexecuteend'] = _offerexecuteend;
+    map['offersignedoff'] = _offersignedoff;
+    map['offerstatus'] = _offerstatus;
+    map['offerservicepercentage'] = _offerservicepercentage;
+    map['computed_rating'] = _computedRating;
+    map['user_rating'] = _userRating;
+    map['offerincepted'] = _offerincepted;
+    map['created_at'] = _createdAt;
+    map['modified'] = _modified;
+    map['slug'] = _slug;
+    if (_subscribers != null) {
+      map['subscribers'] = _subscribers?.toJson();
+    }
+    if (_category != null) {
+      map['category'] = _category?.toJson();
+    }
+    if (_segment != null) {
+      map['segment'] = _segment?.toJson();
+    }
+    if (_subsegment != null) {
+      map['subsegment'] = _subsegment?.toJson();
+    }
+    map['favourite'] = _favourite;
+    map['like'] = _like;
+    if (_ConfirmingSubscriber != null) {
+      map['confirmingsubscriber'] = _ConfirmingSubscriber?.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+class ConfirmingUser {
+  ConfirmingUser({
+    num? id,
+    String? name,
+    String? displayName,
+
+  }){
+    _id = id;
+    _name = name;
+    _displayName = displayName;
+
+  }
+
+  ConfirmingUser.fromJson(dynamic json) {
+    _id = json['id'];
+    _name = json['username'];
+    _displayName = json['displayname'];
+
+  }
+  num? _id;
+  String? _name;
+  String? _displayName;
+
+  ConfirmingUser copyWith({
+    num? id,
+    String? name,
+    String? displayName,
+
+  }) => ConfirmingUser(
+    id: id ?? _id,
+    name: name ?? _name,
+    displayName: displayName ?? _displayName,
+
+  );
+  num? get id => _id;
+  String? get name => _name;
+  String? get displayName => _displayName;
+
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['id'] = _id;
+    map['username'] = _name;
+    map['displayname'] = _displayName;
+
+    return map;
+  }
+
+}

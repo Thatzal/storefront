@@ -1,0 +1,12 @@
+creativemaybeno.wakelock-jetified-window-java-1.0.0-beta04-0 /Users/drawaurathatzal/.gradle/caches/transforms-3/7f5c0a88e605726915ea36caf9197191/transformed/jetified-window-java-1.0.0-beta04/res
+creativemaybeno.wakelock-jetified-annotation-experimental-1.1.0-1 /Users/drawaurathatzal/.gradle/caches/transforms-3/b4a81ab737be1f118c6b7c6f67e915fb/transformed/jetified-annotation-experimental-1.1.0/res
+creativemaybeno.wakelock-core-1.6.0-2 /Users/drawaurathatzal/.gradle/caches/transforms-3/bd143bd142702dc39c3f27acadaacb07/transformed/core-1.6.0/res
+creativemaybeno.wakelock-jetified-window-1.0.0-beta04-3 /Users/drawaurathatzal/.gradle/caches/transforms-3/dc088083d5a1860f98d6434729706507/transformed/jetified-window-1.0.0-beta04/res
+creativemaybeno.wakelock-main-4 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/wakelock-0.6.2/android/src/main/res
+creativemaybeno.wakelock-release-5 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/wakelock-0.6.2/android/src/release/res
+creativemaybeno.wakelock-pngs-6 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/wakelock/generated/res/pngs/release
+creativemaybeno.wakelock-resValues-7 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/wakelock/generated/res/resValues/release
+creativemaybeno.wakelock-rs-8 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/wakelock/generated/res/rs/release
+creativemaybeno.wakelock-mergeReleaseResources-9 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/wakelock/intermediates/incremental/release/mergeReleaseResources/merged.dir
+creativemaybeno.wakelock-mergeReleaseResources-10 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/wakelock/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+creativemaybeno.wakelock-merged_res-11 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/wakelock/intermediates/merged_res/release

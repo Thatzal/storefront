@@ -1,0 +1,12 @@
+dev.fluttercommunity.plus.packageinfo.package_info_plus-jetified-window-java-1.0.0-beta04-0 /Users/drawaurathatzal/.gradle/caches/transforms-3/7f5c0a88e605726915ea36caf9197191/transformed/jetified-window-java-1.0.0-beta04/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-jetified-annotation-experimental-1.1.0-1 /Users/drawaurathatzal/.gradle/caches/transforms-3/b4a81ab737be1f118c6b7c6f67e915fb/transformed/jetified-annotation-experimental-1.1.0/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-core-1.6.0-2 /Users/drawaurathatzal/.gradle/caches/transforms-3/bd143bd142702dc39c3f27acadaacb07/transformed/core-1.6.0/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-jetified-window-1.0.0-beta04-3 /Users/drawaurathatzal/.gradle/caches/transforms-3/dc088083d5a1860f98d6434729706507/transformed/jetified-window-1.0.0-beta04/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-main-4 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/package_info_plus-3.1.2/android/src/main/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-release-5 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/package_info_plus-3.1.2/android/src/release/res
+dev.fluttercommunity.plus.packageinfo.package_info_plus-pngs-6 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/package_info_plus/generated/res/pngs/release
+dev.fluttercommunity.plus.packageinfo.package_info_plus-resValues-7 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/package_info_plus/generated/res/resValues/release
+dev.fluttercommunity.plus.packageinfo.package_info_plus-rs-8 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/package_info_plus/generated/res/rs/release
+dev.fluttercommunity.plus.packageinfo.package_info_plus-mergeReleaseResources-9 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/package_info_plus/intermediates/incremental/release/mergeReleaseResources/merged.dir
+dev.fluttercommunity.plus.packageinfo.package_info_plus-mergeReleaseResources-10 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/package_info_plus/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+dev.fluttercommunity.plus.packageinfo.package_info_plus-merged_res-11 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/package_info_plus/intermediates/merged_res/release

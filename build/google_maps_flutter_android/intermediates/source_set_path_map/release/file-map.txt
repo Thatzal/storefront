@@ -1,0 +1,16 @@
+io.flutter.plugins.googlemaps.google_maps_flutter_android-jetified-window-java-1.0.0-beta04-0 /Users/drawaurathatzal/.gradle/caches/transforms-3/7f5c0a88e605726915ea36caf9197191/transformed/jetified-window-java-1.0.0-beta04/res
+io.flutter.plugins.googlemaps.google_maps_flutter_android-jetified-play-services-basement-18.0.0-1 /Users/drawaurathatzal/.gradle/caches/transforms-3/815d3de188795cb8fd1f4a4b401ff2cb/transformed/jetified-play-services-basement-18.0.0/res
+io.flutter.plugins.googlemaps.google_maps_flutter_android-jetified-play-services-base-18.0.1-2 /Users/drawaurathatzal/.gradle/caches/transforms-3/964140187cc3656dddfb3d345c1f1f31/transformed/jetified-play-services-base-18.0.1/res
+io.flutter.plugins.googlemaps.google_maps_flutter_android-jetified-annotation-experimental-1.1.0-3 /Users/drawaurathatzal/.gradle/caches/transforms-3/b4a81ab737be1f118c6b7c6f67e915fb/transformed/jetified-annotation-experimental-1.1.0/res
+io.flutter.plugins.googlemaps.google_maps_flutter_android-core-1.6.0-4 /Users/drawaurathatzal/.gradle/caches/transforms-3/bd143bd142702dc39c3f27acadaacb07/transformed/core-1.6.0/res
+io.flutter.plugins.googlemaps.google_maps_flutter_android-jetified-window-1.0.0-beta04-5 /Users/drawaurathatzal/.gradle/caches/transforms-3/dc088083d5a1860f98d6434729706507/transformed/jetified-window-1.0.0-beta04/res
+io.flutter.plugins.googlemaps.google_maps_flutter_android-jetified-play-services-maps-18.1.0-6 /Users/drawaurathatzal/.gradle/caches/transforms-3/eac89bcc9c33062532460112642b179d/transformed/jetified-play-services-maps-18.1.0/res
+io.flutter.plugins.googlemaps.google_maps_flutter_android-main-7 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/google_maps_flutter_android-2.5.1/android/src/main/res
+io.flutter.plugins.googlemaps.google_maps_flutter_android-release-8 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/google_maps_flutter_android-2.5.1/android/src/release/res
+io.flutter.plugins.googlemaps.google_maps_flutter_android-packaged_res-9 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/release
+io.flutter.plugins.googlemaps.google_maps_flutter_android-pngs-10 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/google_maps_flutter_android/generated/res/pngs/release
+io.flutter.plugins.googlemaps.google_maps_flutter_android-resValues-11 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/google_maps_flutter_android/generated/res/resValues/release
+io.flutter.plugins.googlemaps.google_maps_flutter_android-rs-12 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/google_maps_flutter_android/generated/res/rs/release
+io.flutter.plugins.googlemaps.google_maps_flutter_android-mergeReleaseResources-13 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/google_maps_flutter_android/intermediates/incremental/release/mergeReleaseResources/merged.dir
+io.flutter.plugins.googlemaps.google_maps_flutter_android-mergeReleaseResources-14 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/google_maps_flutter_android/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+io.flutter.plugins.googlemaps.google_maps_flutter_android-merged_res-15 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/google_maps_flutter_android/intermediates/merged_res/release

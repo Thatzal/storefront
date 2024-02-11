@@ -1,0 +1,12 @@
+com.byneapp.flutter_config-jetified-window-java-1.0.0-beta04-0 /Users/drawaurathatzal/.gradle/caches/transforms-3/7f5c0a88e605726915ea36caf9197191/transformed/jetified-window-java-1.0.0-beta04/res
+com.byneapp.flutter_config-jetified-annotation-experimental-1.1.0-1 /Users/drawaurathatzal/.gradle/caches/transforms-3/b4a81ab737be1f118c6b7c6f67e915fb/transformed/jetified-annotation-experimental-1.1.0/res
+com.byneapp.flutter_config-core-1.6.0-2 /Users/drawaurathatzal/.gradle/caches/transforms-3/bd143bd142702dc39c3f27acadaacb07/transformed/core-1.6.0/res
+com.byneapp.flutter_config-jetified-window-1.0.0-beta04-3 /Users/drawaurathatzal/.gradle/caches/transforms-3/dc088083d5a1860f98d6434729706507/transformed/jetified-window-1.0.0-beta04/res
+com.byneapp.flutter_config-main-4 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/flutter_config-2.0.2/android/src/main/res
+com.byneapp.flutter_config-release-5 /Users/drawaurathatzal/.pub-cache/hosted/pub.dev/flutter_config-2.0.2/android/src/release/res
+com.byneapp.flutter_config-pngs-6 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/flutter_config/generated/res/pngs/release
+com.byneapp.flutter_config-resValues-7 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/flutter_config/generated/res/resValues/release
+com.byneapp.flutter_config-rs-8 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/flutter_config/generated/res/rs/release
+com.byneapp.flutter_config-mergeReleaseResources-9 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/flutter_config/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.byneapp.flutter_config-mergeReleaseResources-10 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/flutter_config/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.byneapp.flutter_config-merged_res-11 /Users/drawaurathatzal/Documents/ThatzalCode0702/build/flutter_config/intermediates/merged_res/release
